@@ -1,4 +1,4 @@
-# 👋 Hey there, I'm Hang Subba
+# 👋 Hey there, I'm Yuadhistra Hang Subba aka Y.D
 
 🚀 **Backend Developer | Problem Solver | Tech Enthusiast**
 
