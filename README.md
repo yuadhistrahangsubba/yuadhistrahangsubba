@@ -1,124 +1,32 @@
-# 👋 Hey there, I'm Yuadhistra Hang Subba aka Y.D
+<h1 align="center">Hi 👋, I'm Yuadhistra Hang Subba AKA Y.D</h1>
+<h3 align="center">I’m a passionate developer who enjoys building clean, scalable systems and solving real-world problems through code. I work primarily with backend technologies, focusing on creating efficient APIs, managing data, and designing solid system architectures.</h3>
 
-🚀 **Backend Developer | Problem Solver | Tech Enthusiast**
+<p align="left"> <img src="https://komarev.com/ghpvc/?username=yuadhistrahangsubba&label=Profile%20views&color=0e75b6&style=flat" alt="yuadhistrahangsubba" /> </p>
 
----
+<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=yuadhistrahangsubba" alt="yuadhistrahangsubba" /></a> </p>
 
-## 🌟 About Me
+<p align="left"> <a href="https://twitter.com/" target="blank"><img src="https://img.shields.io/twitter/follow/?logo=twitter&style=for-the-badge" alt="" /></a> </p>
 
-I’m a passionate developer who enjoys building clean, scalable systems and solving real-world problems through code. I work primarily with backend technologies, focusing on creating efficient APIs, managing data, and designing solid system architectures.
+- 🔭 I’m currently working on [EMIS](https://emis.systems.gov.bt/)
 
-💡 I believe in:
+- 🌱 I’m currently learning **Nestjs, Nextjs, Kubernets, AWS**
 
-- Writing **maintainable and meaningful code**
-- Constantly **learning and improving**
-- Turning complex problems into **simple, elegant solutions**
+- 💬 Ask me about **Nestjs, Microservices, CQRS**
 
----
+- 📫 How to reach me **yuadhistrahangsubba10@gmail.com**
 
-## 🧠 What I Work With
-
-- ⚙️ Backend Development (Node.js, NestJS)
-- 🗄️ Database Design & Management (SQL / TypeORM)
-- 🧩 System Design & Architecture
-- 🔄 API Development & Integration
-- 🐳 DevOps Basics (Docker, deployment workflows)
-
----
-
-## 🔥 Current Focus
-
-- Building scalable backend systems
-- Improving system performance and data handling
-- Writing cleaner, more efficient code
-- Exploring advanced system design patterns
-
----
-
-## 🎯 Interests
-
-- 💻 Software Engineering
-- 🧮 Logical & Analytical Problem Solving
-- 🌐 Technology Trends & Innovation
-- 🧠 Computational Thinking (Math, Physics, CS concepts)
-
----
-
-## 🚀 Projects & Work
-
-I enjoy working on projects that involve:
-
-- Complex data handling
-- Real-world system workflows
-- Performance optimization
-- Clean architecture design
-
----
-
-## 🏆 Philosophy
-
-> “Great systems are not just built — they are carefully designed, refined, and evolved.”
-
----
-
-## 📈 Goals
-
-- Become an expert in backend architecture
-- Contribute to impactful, large-scale systems
-- Continuously learn and adapt to new technologies
-
----
-
-## 📊 My GitHub Activity
-
-![GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=yuadhistrahangsubba&theme=github-compact)
-
----
-
-## 🏅 GitHub Stats
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=yuadhistrahangsubba&show_icons=true&theme=radical" alt="GitHub Stats" height="180"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=yuadhistrahangsubba&layout=compact&theme=radical" alt="Top Languages" height="180"/>
-</p>
-
----
-
-## 🔥 Streak Stats
-
-<p align="center">
-  <img src="https://streak-stats.demolab.com?user=yuadhistrahangsubba&theme=radical&hide_border=true" alt="GitHub Streak"/>
-</p>
-
----
-
-## 🎉 Fun Facts & Achievements
-
-- 🚀 Over X commits in the last year
-- 🏆 Contributed to Y+ repositories
-- 🌍 Collaborated with developers worldwide
-- 🧩 Favorite stack: Node.js, NestJS, TypeORM
-- 📚 Lifelong learner & backend enthusiast
-
----
-
-## 🚀 Tech Stack & Tools
-
+<h3 align="left">Connect with me:</h3>
 <p align="left">
-  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React"/>
-  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js"/>
-  <img src="https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white" alt="NestJS"/>
-  <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP"/>
-  <img src="https://img.shields.io/badge/TypeORM-FF0000?style=for-the-badge&logo=typeorm&logoColor=white" alt="TypeORM"/>
-  <img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel"/>
-  <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" alt="Kubernetes"/>
-  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL"/>
-  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL"/>
-  <img src="https://img.shields.io/badge/Microservices-FF6F00?style=for-the-badge&logo=appveyor&logoColor=white" alt="Microservices"/>
+<a href="https://linkedin.com/in/https://www.linkedin.com/in/yuadhistra-hang-subba-0791633b3/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="https://www.linkedin.com/in/yuadhistra-hang-subba-0791633b3/" height="30" width="40" /></a>
+<a href="https://fb.com/https://www.facebook.com/ram.subba.5015/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="https://www.facebook.com/ram.subba.5015/" height="30" width="40" /></a>
+<a href="https://instagram.com/https://www.instagram.com/y.d.luffy9/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="https://www.instagram.com/y.d.luffy9/" height="30" width="40" /></a>
 </p>
 
----
+<h3 align="left">Languages and Tools:</h3>
+<p align="left"> <a href="https://getbootstrap.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap" width="40" height="40"/> </a> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://www.docker.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="docker" width="40" height="40"/> </a> <a href="https://expressjs.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="40" height="40"/> </a> <a href="https://www.figma.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma" width="40" height="40"/> </a> <a href="https://firebase.google.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://grafana.com" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/grafana/grafana-icon.svg" alt="grafana" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://www.java.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://kubernetes.io" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg" alt="kubernetes" width="40" height="40"/> </a> <a href="https://laravel.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/laravel/laravel-plain-wordmark.svg" alt="laravel" width="40" height="40"/> </a> <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> <a href="https://nestjs.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nestjs/nestjs-plain.svg" alt="nestjs" width="40" height="40"/> </a> <a href="https://nextjs.org/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/nextjs-2.svg" alt="nextjs" width="40" height="40"/> </a> <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a> <a href="https://opencv.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg" alt="opencv" width="40" height="40"/> </a> <a href="https://pandas.pydata.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/pandas/pandas-original.svg" alt="pandas" width="40" height="40"/> </a> <a href="https://www.php.net" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" alt="php" width="40" height="40"/> </a> <a href="https://www.postgresql.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="40" height="40"/> </a> <a href="https://postman.com" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman" width="40" height="40"/> </a> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a> <a href="https://reactnative.dev/" target="_blank" rel="noreferrer"> <img src="https://reactnative.dev/img/header_logo.svg" alt="reactnative" width="40" height="40"/> </a> <a href="https://redis.io" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redis/redis-original-wordmark.svg" alt="redis" width="40" height="40"/> </a> <a href="https://scikit-learn.org/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="scikit_learn" width="40" height="40"/> </a> <a href="https://seaborn.pydata.org/" target="_blank" rel="noreferrer"> <img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" alt="seaborn" width="40" height="40"/> </a> <a href="https://www.tensorflow.org" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg" alt="tensorflow" width="40" height="40"/> </a> <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/> </a> </p>
 
-> _“Code. Learn. Improve. Repeat.”_
+<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=yuadhistrahangsubba&show_icons=true&locale=en&layout=compact" alt="yuadhistrahangsubba" /></p>
 
----
+<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=yuadhistrahangsubba&show_icons=true&locale=en" alt="yuadhistrahangsubba" /></p>
+
+<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=yuadhistrahangsubba&" alt="yuadhistrahangsubba" /></p>
