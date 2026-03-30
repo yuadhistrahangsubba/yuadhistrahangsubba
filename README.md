@@ -119,6 +119,21 @@ I enjoy working on projects that involve:
 
 ---
 
+## 📈 GitHub Insights
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=yuadhistrahangsubba&show_icons=true&theme=radical" height="170" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=yuadhistrahangsubba&layout=compact&theme=radical" height="170" />
+</p>
+<p align="center">
+  <img src="https://streak-stats.demolab.com?user=yuadhistrahangsubba&theme=radical&hide_border=true" />
+</p>
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=yuadhistrahangsubba&theme=github-compact" />
+</p>
+
+---
+
 > _“Code. Learn. Improve. Repeat.”_
 
 ---
