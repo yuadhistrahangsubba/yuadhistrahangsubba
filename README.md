@@ -1,4 +1,4 @@
-# 👋 Hey there, I'm Yuadhistra Hang Subba aka Y.D
+# 👋 Hey there, I'm Hang Subba
 
 🚀 **Backend Developer | Problem Solver | Tech Enthusiast**
 
@@ -71,15 +71,15 @@ I enjoy working on projects that involve:
 
 ## 📊 My GitHub Activity
 
-![GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=hangsubba&theme=github-compact)
+![GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=yuadhistrahangsubba&theme=github-compact)
 
 ---
 
 ## 🏅 GitHub Stats
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=hangsubba&show_icons=true&theme=radical" alt="GitHub Stats" height="180"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=hangsubba&layout=compact&theme=radical" alt="Top Languages" height="180"/>
+  <img src="https://github-readme-stats.vercel.app/api?username=yuadhistrahangsubba&show_icons=true&theme=radical" alt="GitHub Stats" height="180"/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=yuadhistrahangsubba&layout=compact&theme=radical" alt="Top Languages" height="180"/>
 </p>
 
 ---
@@ -87,7 +87,7 @@ I enjoy working on projects that involve:
 ## 🔥 Streak Stats
 
 <p align="center">
-  <img src="https://streak-stats.demolab.com?user=hangsubba&theme=radical&hide_border=true" alt="GitHub Streak"/>
+  <img src="https://streak-stats.demolab.com?user=yuadhistrahangsubba&theme=radical&hide_border=true" alt="GitHub Streak"/>
 </p>
 
 ---
