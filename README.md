@@ -90,6 +90,10 @@ I enjoy working on projects that involve:
   <img src="https://streak-stats.demolab.com?user=yuadhistrahangsubba&theme=radical&hide_border=true" alt="GitHub Streak"/>
 </p>
 
+<p align="center">
+  <img src="https://img.shields.io/github/commit-activity/t/yuadhistrahangsubba/admin-auth-service?label=commits%20this%20week" alt="Commits this week"/>
+  <!-- For today's commits, shields.io does not provide a direct badge, but you can use GitHub Actions or a custom API for real-time stats. -->
+</p>
 ---
 
 ## 🎉 Fun Facts & Achievements
