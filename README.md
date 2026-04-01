@@ -3,15 +3,19 @@
 <!-- Animated Header -->
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=180&section=header&text=Yuadhistra%20Hang%20Subba&fontSize=42&fontColor=fff&animation=twinkling&fontAlignY=32&desc=Backend%20Developer%20%7C%20System%20Architect%20%7C%20Problem%20Solver&descAlignY=55&descSize=16" />
 
+<br/>
+
 <!-- Typing Animation -->
 <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&duration=3000&pause=1000&color=0FFFC0&center=true&vCenter=true&multiline=true&repeat=true&width=700&height=80&lines=Building+Scalable+Backend+Systems+%F0%9F%9A%80;NestJS+%7C+Node.js+%7C+TypeORM+%7C+PostgreSQL;Turning+Complex+Problems+into+Elegant+Solutions+%E2%9C%A8" alt="Typing SVG" />
 
-<br/>
-<br/>
+<br/><br/>
 
 <!-- Profile Views & Followers -->
 <img src="https://komarev.com/ghpvc/?username=yuadhistrahangsubba&style=for-the-badge&color=0FFFC0&label=PROFILE+VIEWS" />
+&nbsp;
 <img src="https://img.shields.io/github/followers/yuadhistrahangsubba?style=for-the-badge&color=ff00ff&labelColor=141321&label=FOLLOWERS" />
+
+<br/><br/>
 
 </div>
 
