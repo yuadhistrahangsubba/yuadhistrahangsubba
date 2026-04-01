@@ -80,13 +80,19 @@ mindset: continuous_improvement
 
 <img src="https://skillicons.dev/icons?i=nestjs,nodejs,ts,js,rust&theme=dark&perline=5" />
 
+<br/>
+
 **Databases & Cache**
 
 <img src="https://skillicons.dev/icons?i=postgres,mysql,redis&theme=dark&perline=5" />
 
+<br/>
+
 **DevOps & Tools**
 
 <img src="https://skillicons.dev/icons?i=docker,git,github,postman,vscode,neovim&theme=dark&perline=6" />
+
+<br/>
 
 **Frontend (Familiar)**
 
@@ -101,15 +107,16 @@ mindset: continuous_improvement
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=yuadhistrahangsubba&show_icons=true&theme=radical&title_color=0FFFC0&text_color=C0C0C0&icon_color=ff00ff&hide_border=true&count_private=true&rank_icon=github" height="180"/>
+<img src="https://github-readme-stats.vercel.app/api?username=yuadhistrahangsubba&show_icons=true&theme=radical&title_color=0FFFC0&text_color=C0C0C0&icon_color=ff00ff&hide_border=true&count_private=true&rank_icon=github&cache_seconds=1800" height="180"/>
 &nbsp;&nbsp;
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=yuadhistrahangsubba&layout=compact&theme=radical&title_color=ff00ff&text_color=FFFFFF&hide_border=true&langs_count=8" height="180"/>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=yuadhistrahangsubba&layout=compact&theme=radical&title_color=ff00ff&text_color=FFFFFF&hide_border=true&langs_count=8&cache_seconds=1800" height="180"/>
 
 </div>
 
 <div align="center">
+<br/>
 
-<img src="https://streak-stats.demolab.com?user=yuadhistrahangsubba&theme=radical&hide_border=true&ring=0FFFC0&fire=ff00ff&currStreakLabel=0FFFC0&sideLabels=C0C0C0&dates=888888" />
+<img src="https://streak-stats.demolab.com?user=yuadhistrahangsubba&theme=radical&hide_border=true&ring=0FFFC0&fire=ff00ff&currStreakLabel=0FFFC0&sideLabels=C0C0C0&dates=888888&cache_seconds=1800" />
 
 </div>
 
@@ -120,7 +127,7 @@ mindset: continuous_improvement
 
 <div align="center">
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=yuadhistrahangsubba&bg_color=141321&color=0FFFC0&line=ff00ff&point=0FFFC0&area_color=ff00ff&area=true&hide_border=true&custom_title=Yuadhistra's%20Contribution%20Graph" />
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=yuadhistrahangsubba&bg_color=0d1117&color=0FFFC0&line=ff00ff&point=ffffff&area_color=ff00ff&area=true&hide_border=true&custom_title=Yuadhistra%27s%20Contribution%20Graph&radius=6" width="100%"/>
 
 </div>
 
@@ -131,7 +138,22 @@ mindset: continuous_improvement
 
 <div align="center">
 
-<img src="https://github-profile-trophy.vercel.app/?username=yuadhistrahangsubba&theme=matrix&no-frame=true&margin-w=8&margin-h=8&column=7" />
+<img src="https://github-profile-trophy.vercel.app/?username=yuadhistrahangsubba&theme=radical&no-frame=true&no-bg=true&margin-w=6&margin-h=6&column=4&rank=SECRET,SSS,SS,S,AAA,AA,A,B" />
+
+</div>
+
+---
+
+<!-- Snake Animation -->
+<h2>🐍 Contribution Snake</h2>
+
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/yuadhistrahangsubba/yuadhistrahangsubba/output/github-contribution-grid-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/yuadhistrahangsubba/yuadhistrahangsubba/output/github-contribution-grid-snake.svg" />
+  <img alt="github-snake" src="https://raw.githubusercontent.com/yuadhistrahangsubba/yuadhistrahangsubba/output/github-contribution-grid-snake-dark.svg" />
+</picture>
 
 </div>
 
@@ -143,6 +165,8 @@ mindset: continuous_improvement
 <div align="center">
 
 <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical" />
+
+<br/><br/>
 
 > *"Great systems are not just built — they are carefully designed, refined, and evolved."*
 
