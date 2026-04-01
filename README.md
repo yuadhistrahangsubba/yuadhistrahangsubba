@@ -7,6 +7,7 @@
 <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&duration=3000&pause=1000&color=0FFFC0&center=true&vCenter=true&multiline=true&repeat=true&width=700&height=80&lines=Building+Scalable+Backend+Systems+%F0%9F%9A%80;NestJS+%7C+Node.js+%7C+TypeORM+%7C+PostgreSQL;Turning+Complex+Problems+into+Elegant+Solutions+%E2%9C%A8" alt="Typing SVG" />
 
 <br/>
+<br/>
 
 <!-- Profile Views & Followers -->
 <img src="https://komarev.com/ghpvc/?username=yuadhistrahangsubba&style=for-the-badge&color=0FFFC0&label=PROFILE+VIEWS" />
