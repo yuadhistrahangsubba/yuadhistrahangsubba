@@ -6,7 +6,7 @@
 
 ## 🌟 About Me
 
-I’m a passionate developer who enjoys building clean, scalable systems and solving real-world problems through code. I work primarily with backend technologies, focusing on creating efficient APIs, managing data, and designing solid system architectures.
+I'm a passionate developer who enjoys building clean, scalable systems and solving real-world problems through code. I work primarily with backend technologies, focusing on creating efficient APIs, managing data, and designing solid system architectures.
 
 💡 I believe in:
 
@@ -57,7 +57,7 @@ I enjoy working on projects that involve:
 
 ## 🏆 Philosophy
 
-> “Great systems are not just built — they are carefully designed, refined, and evolved.”
+> "Great systems are not just built — they are carefully designed, refined, and evolved."
 
 ---
 
@@ -69,26 +69,40 @@ I enjoy working on projects that involve:
 
 ---
 
-## 📊 GitHub Activity
+## 🚀 Tech Stack & Tools
 
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=yuadhistrahangsubba&theme=github-compact&hide_border=true" />
-</p>
----
-
-## 🏅 GitHub Stats
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=yuadhistrahangsubba&show_icons=true&theme=radical&hide_border=true&count_private=true" height="170"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=yuadhistrahangsubba&layout=compact&theme=radical&hide_border=true" height="170"/>
+  <img src="https://skillicons.dev/icons?i=nestjs,nextjs,ts,js,nodejs,rust,postgres,mysql,redis,docker,git,github,postman,neovim,vscode&theme=dark" />
 </p>
 
 ---
 
-## 🔥 Streak Stats
+## 📊 Live Metrics
 
 <p align="center">
-  <img src="https://streak-stats.demolab.com?user=yuadhistrahangsubba&theme=radical&hide_border=true&cache_seconds=1800" />
+  <img src="https://github-readme-stats.vercel.app/api?username=yuadhistrahangsubba&show_icons=true&theme=radical&title_color=0FFFC0&text_color=C0C0C0&icon_color=ff00ff&hide_border=true&count_private=true" height="170"/>
+  <img src="https://streak-stats.demolab.com?user=yuadhistrahangsubba&theme=radical&currStreakLabel=0FFFC0&ring=ff00ff&fire=0FFFC0&hide_border=true&cache_seconds=1800" height="170"/>
+</p>
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=yuadhistrahangsubba&layout=compact&theme=radical&title_color=ff00ff&text_color=FFFFFF&hide_border=true" height="145"/>
+</p>
+
+<p align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=yuadhistrahangsubba&theme=matrix&no-frame=true&margin-w=10&margin-h=10" />
+</p>
+
+---
+
+## 📡 Project Monitors
+
+<p align="center">
+  <a href="https://your-api-status-page.com">
+    <img src="https://img.shields.io/badge/API%20STATUS-LIVE-0FFFC0?style=for-the-badge&logo=fastapi&logoColor=black" />
+  </a>
+  <a href="https://your-portfolio-link.com">
+    <img src="https://img.shields.io/badge/PORTFOLIO-OPEN-8A2BE2?style=for-the-badge&logo=vercel&logoColor=white" />
+  </a>
 </p>
 
 ---
@@ -100,25 +114,6 @@ I enjoy working on projects that involve:
 - 🌍 Collaborated with developers worldwide
 - 🧩 Favorite stack: Node.js, NestJS, TypeORM
 - 📚 Lifelong learner & backend enthusiast
-
----
-
-## 🚀 Tech Stack & Tools
-
-<p align="left">
-  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React"/>
-  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js"/>
-  <img src="https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white" alt="NestJS"/>
-  <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP"/>
-  <img src="https://img.shields.io/badge/TypeORM-FF0000?style=for-the-badge&logo=typeorm&logoColor=white" alt="TypeORM"/>
-  <img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel"/>
-  <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" alt="Kubernetes"/>
-  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL"/>
-  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL"/>
-  <img src="https://img.shields.io/badge/Microservices-FF6F00?style=for-the-badge&logo=appveyor&logoColor=white" alt="Microservices"/>
-</p>
-
----
 
 ---
 
