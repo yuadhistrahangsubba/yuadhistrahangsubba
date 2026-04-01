@@ -1,137 +1,179 @@
-# 👋 Hey there, I'm Yuadhistra Hang Subba aka Y.D
+<div align="center">
 
-🚀 **Backend Developer | Problem Solver | Tech Enthusiast**
+<!-- Animated Header -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=180&section=header&text=Yuadhistra%20Hang%20Subba&fontSize=42&fontColor=fff&animation=twinkling&fontAlignY=32&desc=Backend%20Developer%20%7C%20System%20Architect%20%7C%20Problem%20Solver&descAlignY=55&descSize=16" />
 
----
+<!-- Typing Animation -->
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&duration=3000&pause=1000&color=0FFFC0&center=true&vCenter=true&multiline=true&repeat=true&width=700&height=80&lines=Building+Scalable+Backend+Systems+%F0%9F%9A%80;NestJS+%7C+Node.js+%7C+TypeORM+%7C+PostgreSQL;Turning+Complex+Problems+into+Elegant+Solutions+%E2%9C%A8" alt="Typing SVG" />
 
-## 🌟 About Me
+<br/>
 
-I’m a passionate developer who enjoys building clean, scalable systems and solving real-world problems through code. I work primarily with backend technologies, focusing on creating efficient APIs, managing data, and designing solid system architectures.
+<!-- Profile Views & Followers -->
+<img src="https://komarev.com/ghpvc/?username=yuadhistrahangsubba&style=for-the-badge&color=0FFFC0&label=PROFILE+VIEWS" />
+<img src="https://img.shields.io/github/followers/yuadhistrahangsubba?style=for-the-badge&color=ff00ff&labelColor=141321&label=FOLLOWERS" />
 
-💡 I believe in:
-
-- Writing **maintainable and meaningful code**
-- Constantly **learning and improving**
-- Turning complex problems into **simple, elegant solutions**
-
----
-
-## 🧠 What I Work With
-
-- ⚙️ Backend Development (Node.js, NestJS)
-- 🗄️ Database Design & Management (SQL / TypeORM)
-- 🧩 System Design & Architecture
-- 🔄 API Development & Integration
-- 🐳 DevOps Basics (Docker, deployment workflows)
+</div>
 
 ---
 
-## 🔥 Current Focus
+<!-- About Me -->
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=2&section=header" />
 
-- Building scalable backend systems
-- Improving system performance and data handling
-- Writing cleaner, more efficient code
-- Exploring advanced system design patterns
+<h2>
+  <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="28"/>
+  &nbsp;About Me
+</h2>
 
----
+```
+╔══════════════════════════════════════════════════════════════╗
+║  const developer = {                                         ║
+║    name     : "Yuadhistra Hang Subba (Y.D)",                 ║
+║    role     : "Backend Developer",                           ║
+║    location : "Bhutan 🇧🇹",                                  ║
+║    focus    : ["Scalable APIs", "System Design",             ║
+║                "Clean Architecture"],                        ║
+║    stack    : ["NestJS", "Node.js", "TypeORM",               ║
+║                "PostgreSQL", "Redis", "Docker"],             ║
+║    motto    : "Code with purpose, build with precision"      ║
+║  }                                                           ║
+╚══════════════════════════════════════════════════════════════╝
+```
 
-## 🎯 Interests
+<table>
+<tr>
+<td width="50%">
 
-- 💻 Software Engineering
-- 🧮 Logical & Analytical Problem Solving
-- 🌐 Technology Trends & Innovation
-- 🧠 Computational Thinking (Math, Physics, CS concepts)
+### 🧠 What I Do
+- ⚙️ **Backend Development** — NestJS, Node.js
+- 🗄️ **Database Design** — PostgreSQL, MySQL, TypeORM
+- 🧩 **System Architecture** — Microservices, Clean Architecture
+- 🔄 **API Development** — REST, Integration Patterns
+- 🐳 **DevOps Basics** — Docker, CI/CD workflows
+- 🦀 **Exploring** — Rust for performance-critical systems
 
----
+</td>
+<td width="50%">
 
-## 🚀 Projects & Work
+### 🔥 Current Focus
+```yaml
+status: actively_building
+exploring:
+  - Advanced system design patterns
+  - Microservices at scale
+  - Performance optimization
+  - Rust for backend systems
+mindset: continuous_improvement
+```
 
-I enjoy working on projects that involve:
-
-- Complex data handling
-- Real-world system workflows
-- Performance optimization
-- Clean architecture design
-
----
-
-## 🏆 Philosophy
-
-> “Great systems are not just built — they are carefully designed, refined, and evolved.”
-
----
-
-## 📈 Goals
-
-- Become an expert in backend architecture
-- Contribute to impactful, large-scale systems
-- Continuously learn and adapt to new technologies
-
----
-
-## 📊 GitHub Activity
-
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=yuadhistrahangsubba&bg_color=141321&color=0FFFC0&line=ff00ff&point=0FFFC0&area=true&hide_border=true" />
-</p>
-
----
-
-## 🏅 GitHub Stats
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=yuadhistrahangsubba&show_icons=true&theme=radical&hide_border=true&count_private=true" height="170"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=yuadhistrahangsubba&layout=compact&theme=radical&hide_border=true" height="170"/>
-</p>
+</td>
+</tr>
+</table>
 
 ---
 
-## 🔥 Streak Stats
+<!-- Tech Stack -->
+<h2>🚀 Tech Stack & Tools</h2>
 
-<p align="center">
-  <img src="https://streak-stats.demolab.com?user=yuadhistrahangsubba&theme=radical&hide_border=true&cache_seconds=1800" />
-</p>
+<div align="center">
 
----
+**Backend & Runtime**
 
-## 🎉 Fun Facts & Achievements
+<img src="https://skillicons.dev/icons?i=nestjs,nodejs,ts,js,rust&theme=dark&perline=5" />
 
-- 🚀 Over X commits in the last year
-- 🏆 Contributed to Y+ repositories
-- 🌍 Collaborated with developers worldwide
-- 🧩 Favorite stack: Node.js, NestJS, TypeORM
-- 📚 Lifelong learner & backend enthusiast
+**Databases & Cache**
 
----
+<img src="https://skillicons.dev/icons?i=postgres,mysql,redis&theme=dark&perline=5" />
 
-## 🚀 Tech Stack & Tools
+**DevOps & Tools**
 
-<p align="left">
-  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React"/>
-  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js"/>
-  <img src="https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white" alt="NestJS"/>
-  <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP"/>
-  <img src="https://img.shields.io/badge/TypeORM-FF0000?style=for-the-badge&logo=typeorm&logoColor=white" alt="TypeORM"/>
-  <img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel"/>
-  <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" alt="Kubernetes"/>
-  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL"/>
-  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL"/>
-  <img src="https://img.shields.io/badge/Microservices-FF6F00?style=for-the-badge&logo=appveyor&logoColor=white" alt="Microservices"/>
-</p>
+<img src="https://skillicons.dev/icons?i=docker,git,github,postman,vscode,neovim&theme=dark&perline=6" />
+
+**Frontend (Familiar)**
+
+<img src="https://skillicons.dev/icons?i=nextjs,react&theme=dark&perline=5" />
+
+</div>
 
 ---
 
+<!-- GitHub Stats -->
+<h2>📊 GitHub Analytics</h2>
+
+<div align="center">
+
+<img src="https://github-readme-stats.vercel.app/api?username=yuadhistrahangsubba&show_icons=true&theme=radical&title_color=0FFFC0&text_color=C0C0C0&icon_color=ff00ff&hide_border=true&count_private=true&rank_icon=github" height="180"/>
+&nbsp;&nbsp;
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=yuadhistrahangsubba&layout=compact&theme=radical&title_color=ff00ff&text_color=FFFFFF&hide_border=true&langs_count=8" height="180"/>
+
+</div>
+
+<div align="center">
+
+<img src="https://streak-stats.demolab.com?user=yuadhistrahangsubba&theme=radical&hide_border=true&ring=0FFFC0&fire=ff00ff&currStreakLabel=0FFFC0&sideLabels=C0C0C0&dates=888888" />
+
+</div>
+
 ---
 
-<h3 align="left">Connect with me:</h3>
-<p align="left">
-<a href="https://www.linkedin.com/in/yuadhistra-hang-subba-0791633b3/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="LinkedIn" height="30" width="40" /></a>
-<a href="https://www.facebook.com/ram.subba.5015/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="Facebook" height="30" width="40" /></a>
-<a href="https://www.instagram.com/y.d.luffy9/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="Instagram" height="30" width="40" /></a>
-</p>
+<!-- Activity Graph -->
+<h2>📈 Contribution Graph</h2>
+
+<div align="center">
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=yuadhistrahangsubba&bg_color=141321&color=0FFFC0&line=ff00ff&point=0FFFC0&area_color=ff00ff&area=true&hide_border=true&custom_title=Yuadhistra's%20Contribution%20Graph" />
+
+</div>
 
 ---
 
-## ⚡ Fun Fact
+<!-- Trophies -->
+<h2>🏆 GitHub Trophies</h2>
 
-> I enjoy solving complex backend problems more than watching movies 😄
+<div align="center">
+
+<img src="https://github-profile-trophy.vercel.app/?username=yuadhistrahangsubba&theme=matrix&no-frame=true&margin-w=8&margin-h=8&column=7" />
+
+</div>
+
+---
+
+<!-- Philosophy -->
+<h2>💡 Philosophy</h2>
+
+<div align="center">
+
+<img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical" />
+
+> *"Great systems are not just built — they are carefully designed, refined, and evolved."*
+
+</div>
+
+---
+
+<!-- Connect -->
+<h2>🌐 Connect With Me</h2>
+
+<div align="center">
+
+<a href="https://www.linkedin.com/in/yuadhistra-hang-subba-0791633b3/">
+  <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
+</a>
+&nbsp;
+<a href="https://www.facebook.com/ram.subba.5015/">
+  <img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" />
+</a>
+&nbsp;
+<a href="https://www.instagram.com/y.d.luffy9/">
+  <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" />
+</a>
+
+</div>
+
+---
+
+<!-- Footer -->
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=120&section=footer&text=Thanks%20for%20visiting!&fontSize=24&fontColor=fff&animation=twinkling" />
+
+</div>
