@@ -16,7 +16,6 @@
 
 ---
 
-<!-- About Me -->
 <img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=2&section=header" />
 
 <h2>
@@ -44,6 +43,7 @@
 <td width="50%">
 
 ### 🧠 What I Do
+
 - ⚙️ **Backend Development** — NestJS, Node.js
 - 🗄️ **Database Design** — PostgreSQL, MySQL, TypeORM
 - 🧩 **System Architecture** — Microservices, Clean Architecture
@@ -55,6 +55,7 @@
 <td width="50%">
 
 ### 🔥 Current Focus
+
 ```yaml
 status: actively_building
 exploring:
@@ -71,36 +72,108 @@ mindset: continuous_improvement
 
 ---
 
-<!-- Tech Stack --> <h2>🚀 Tech Stack & Tools</h2> <div align="center">
+<!-- Tech Stack -->
+<h2>🚀 Tech Stack & Tools</h2>
 
-Backend & Runtime
+<div align="center">
+
+**Backend & Runtime**
 
 <img src="https://skillicons.dev/icons?i=nestjs,nodejs,ts,js,rust&theme=dark&perline=5" />
 
-Databases & Cache
+**Databases & Cache**
 
 <img src="https://skillicons.dev/icons?i=postgres,mysql,redis&theme=dark&perline=5" />
 
-DevOps & Tools
+**DevOps & Tools**
 
 <img src="https://skillicons.dev/icons?i=docker,git,github,postman,vscode,neovim&theme=dark&perline=6" />
 
-Frontend (Familiar)
+**Frontend (Familiar)**
 
-<img src="https://skillicons.dev/icons?i=nextjs,react&theme=dark&perline=5" /> </div>
-
-<!-- GitHub Stats --> <h2>📊 GitHub Analytics</h2> <div align="center"> <img src="https://github-readme-stats.vercel.app/api?username=yuadhistrahangsubba&show_icons=true&theme=radical&title_color=0FFFC0&text_color=C0C0C0&icon_color=ff00ff&hide_border=true&count_private=true&rank_icon=github&cache_seconds=1800" height="180"/> &nbsp;&nbsp; <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=yuadhistrahangsubba&layout=compact&theme=radical&title_color=ff00ff&text_color=FFFFFF&hide_border=true&langs_count=8&cache_seconds=1800" height="180"/> </div> <div align="center"> <img src="https://streak-stats.demolab.com?user=yuadhistrahangsubba&theme=radical&hide_border=true&ring=0FFFC0&fire=ff00ff&currStreakLabel=0FFFC0&sideLabels=C0C0C0&dates=888888&cache_seconds=1800" /> </div>
-
-<!-- Activity Graph --> <h2>📈 Contribution Graph</h2> <div align="center"> <img src="https://github-readme-activity-graph.vercel.app/graph?username=yuadhistrahangsubba&bg_color=141321&color=0FFFC0&line=ff00ff&point=0FFFC0&area_color=ff00ff&area=true&hide_border=true&custom_title=Yuadhistra's%20Contribution%20Graph&days=30" /> </div>
-
-<!-- Trophies --> <h2>🏆 GitHub Trophies</h2> <div align="center"> <img src="https://github-profile-trophy.vercel.app/?username=yuadhistrahangsubba&theme=matrix&no-frame=true&margin-w=8&margin-h=8&column=7" /> </div>
-
-<!-- Philosophy --> <h2>💡 Philosophy</h2> <div align="center"> <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical" />
-
-"Great systems are not just built — they are carefully designed, refined, and evolved."
+<img src="https://skillicons.dev/icons?i=nextjs,react&theme=dark&perline=5" />
 
 </div>
 
-<!-- Connect --> <h2>🌐 Connect With Me</h2> <div align="center"> <a href="https://www.linkedin.com/in/yuadhistra-hang-subba-0791633b3/"> <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /> </a> &nbsp; <a href="https://www.facebook.com/ram.subba.5015/"> <img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" /> </a> &nbsp; <a href="https://www.instagram.com/y.d.luffy9/"> <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" /> </a> </div>
+---
 
-<!-- Footer --> <div align="center"> <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=120&section=footer&text=Thanks%20for%20visiting!&fontSize=24&fontColor=fff&animation=twinkling" /> </div>
+<!-- GitHub Stats -->
+<h2>📊 GitHub Analytics</h2>
+
+<div align="center">
+
+<img src="https://github-readme-stats-6fq2mor9b-yuadhistrahangsubbas-projects.vercel.app/api?username=yuadhistrahangsubba&show_icons=true&theme=radical&title_color=0FFFC0&text_color=C0C0C0&icon_color=ff00ff&hide_border=true&count_private=true&rank_icon=github&cache_seconds=1800" height="180"/>
+&nbsp;&nbsp;
+<img src="https://github-readme-stats-6fq2mor9b-yuadhistrahangsubbas-projects.vercel.app/api/top-langs/?username=yuadhistrahangsubba&layout=compact&theme=radical&title_color=ff00ff&text_color=FFFFFF&hide_border=true&langs_count=8&cache_seconds=1800" height="180"/>
+
+</div>
+
+<div align="center">
+
+<img src="https://streak-stats.demolab.com?user=yuadhistrahangsubba&theme=radical&hide_border=true&ring=0FFFC0&fire=ff00ff&currStreakLabel=0FFFC0&sideLabels=C0C0C0&dates=888888" />
+
+</div>
+
+---
+
+<!-- Activity Graph -->
+<h2>📈 Contribution Graph</h2>
+
+<div align="center">
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=yuadhistrahangsubba&bg_color=141321&color=0FFFC0&line=ff00ff&point=0FFFC0&area_color=ff00ff&area=true&hide_border=true&custom_title=Yuadhistra's%20Contribution%20Graph&days=30" />
+
+</div>
+
+---
+
+<!-- Trophies -->
+<h2>🏆 GitHub Trophies</h2>
+
+<div align="center">
+
+<img src="https://github-profile-trophy.vercel.app/?username=yuadhistrahangsubba&theme=matrix&no-frame=true&margin-w=8&margin-h=8&column=7" />
+
+</div>
+
+---
+
+<!-- Philosophy -->
+<h2>💡 Philosophy</h2>
+
+<div align="center">
+
+<img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical" />
+
+> _"Great systems are not just built — they are carefully designed, refined, and evolved."_
+
+</div>
+
+---
+
+<!-- Connect -->
+<h2>🌐 Connect With Me</h2>
+
+<div align="center">
+
+<a href="https://www.linkedin.com/in/yuadhistra-hang-subba-0791633b3/">
+  <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
+</a>
+&nbsp;
+<a href="https://www.facebook.com/ram.subba.5015/">
+  <img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" />
+</a>
+&nbsp;
+<a href="https://www.instagram.com/y.d.luffy9/">
+  <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" />
+</a>
+
+</div>
+
+---
+
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=120&section=footer&text=Thanks%20for%20visiting!&fontSize=24&fontColor=fff&animation=twinkling" />
+
+</div>
