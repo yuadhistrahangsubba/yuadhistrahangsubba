@@ -121,7 +121,7 @@ mindset: continuous_improvement
 
 <div align="center">
 
-<img src="https://ghchart.rshah.org/0FFFC0/yuadhistrahangsubba" alt="Yuadhistra's Contribution Graph" />
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=yuadhistrahangsubba&bg_color=141321&color=0FFFC0&line=ff00ff&point=0FFFC0&area_color=ff00ff&area=true&hide_border=true&custom_title=Yuadhistra's%20Contribution%20Graph&days=30" />
 
 </div>
 
