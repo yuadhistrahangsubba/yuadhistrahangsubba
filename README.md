@@ -1,134 +1,121 @@
 <div align="center">
 
-<!-- Animated Header -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=180&section=header&text=Yuadhistra%20Hang%20Subba&fontSize=42&fontColor=fff&animation=twinkling&fontAlignY=32&desc=Backend%20Developer%20%7C%20System%20Architect%20%7C%20Problem%20Solver&descAlignY=55&descSize=16" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,40:00FFC0,100:FF00FF&height=220&section=header&text=Yuadhistra%20Hang%20Subba&fontSize=46&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Backend%20Developer%20%E2%80%A2%20System%20Architect%20%E2%80%A2%20Problem%20Solver&descAlignY=56&descSize=16&descColor=cccccc" />
 
-<!-- Typing Animation -->
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&duration=3000&pause=1000&color=0FFFC0&center=true&vCenter=true&multiline=true&repeat=true&width=700&height=80&lines=Building+Scalable+Backend+Systems+%F0%9F%9A%80;NestJS+%7C+Node.js+%7C+TypeORM+%7C+PostgreSQL;Turning+Complex+Problems+into+Elegant+Solutions+%E2%9C%A8" alt="Typing SVG" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=18&duration=2800&pause=900&color=00FFC0&center=true&vCenter=true&repeat=true&width=620&height=52&lines=Building+scalable+backend+systems+%F0%9F%9A%80;NestJS+%E2%80%A2+TypeORM+%E2%80%A2+PostgreSQL+%E2%80%A2+Redis;Microservices+%E2%80%A2+Clean+Architecture+%E2%80%A2+CQRS;Exploring+Rust+for+systems+programming+%F0%9F%A6%80" alt="Typing SVG" />
 
 <br/>
 
-<!-- Profile Views & Followers -->
-<img src="https://komarev.com/ghpvc/?username=yuadhistrahangsubba&style=for-the-badge&color=0FFFC0&label=PROFILE+VIEWS" />
-<img src="https://img.shields.io/github/followers/yuadhistrahangsubba?style=for-the-badge&color=ff00ff&labelColor=141321&label=FOLLOWERS" />
+![Profile Views](https://komarev.com/ghpvc/?username=yuadhistrahangsubba&style=for-the-badge&color=00FFC0&label=PROFILE+VIEWS&labelColor=0D1117)
+&nbsp;
+![Followers](https://img.shields.io/github/followers/yuadhistrahangsubba?style=for-the-badge&color=FF00FF&labelColor=0D1117&label=FOLLOWERS)
 
 </div>
 
----
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=2&section=header" />
-
-<h2>
-  <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="28"/>
-  &nbsp;About Me
-</h2>
-
-```
-╔══════════════════════════════════════════════════════════════╗
-║  const developer = {                                         ║
-║    name     : "Yuadhistra Hang Subba (Y.D)",                 ║
-║    role     : "Backend Developer",                           ║
-║    location : "Bhutan 🇧🇹",                                  ║
-║    focus    : ["Scalable APIs", "System Design",             ║
-║                "Clean Architecture"],                        ║
-║    stack    : ["NestJS", "Node.js", "TypeORM",               ║
-║                "PostgreSQL", "Redis", "Docker"],             ║
-║    motto    : "Code with purpose, build with precision"      ║
-║  }                                                           ║
-╚══════════════════════════════════════════════════════════════╝
-```
-
-<table>
-<tr>
-<td width="50%">
-
-### 🧠 What I Do
-
-- ⚙️ **Backend Development** — NestJS, Node.js
-- 🗄️ **Database Design** — PostgreSQL, MySQL, TypeORM
-- 🧩 **System Architecture** — Microservices, Clean Architecture
-- 🔄 **API Development** — REST, Integration Patterns
-- 🐳 **DevOps Basics** — Docker, CI/CD workflows
-- 🦀 **Exploring** — Rust for performance-critical systems
-
-</td>
-<td width="50%">
-
-### 🔥 Current Focus
-
-```yaml
-status: actively_building
-exploring:
-  - Advanced system design patterns
-  - Microservices at scale
-  - Performance optimization
-  - Rust for backend systems
-mindset: continuous_improvement
-```
-
-</td>
-</tr>
-</table>
+<br/>
 
 ---
 
-<!-- Tech Stack -->
-<h2>🚀 Tech Stack & Tools</h2>
+## 🧑‍💻 &nbsp;About Me
+
+```typescript
+const developer = {
+  name:     "Yuadhistra Hang Subba",
+  alias:    "Y.D",
+  location: "Bhutan 🇧🇹",
+  role:     "Backend Developer",
+
+  stack: {
+    core:     ["NestJS", "Node.js", "TypeScript"],
+    database: ["PostgreSQL", "MySQL", "Redis"],
+    infra:    ["Docker", "NATS", "GitHub Actions"],
+    learning: "Rust 🦀",
+  },
+
+  patterns: ["Microservices", "Clean Architecture", "CQRS", "Event-Driven"],
+  motto:    "Code with purpose, build with precision ⚡",
+};
+```
+
+<br/>
+
+---
+
+## 🚀 &nbsp;Tech Stack
 
 <div align="center">
 
-**Backend & Runtime**
+**Backend & Runtime**<br/>
+<img src="https://skillicons.dev/icons?i=nestjs,nodejs,ts,js,rust&theme=dark" />
 
-<img src="https://skillicons.dev/icons?i=nestjs,nodejs,ts,js,rust&theme=dark&perline=5" />
+<br/><br/>
 
-**Databases & Cache**
+**Databases & Cache**<br/>
+<img src="https://skillicons.dev/icons?i=postgres,mysql,redis&theme=dark" />
 
-<img src="https://skillicons.dev/icons?i=postgres,mysql,redis&theme=dark&perline=5" />
+<br/><br/>
 
-**DevOps & Tools**
+**Tools & DevOps**<br/>
+<img src="https://skillicons.dev/icons?i=docker,git,github,postman,vscode,neovim&theme=dark" />
 
-<img src="https://skillicons.dev/icons?i=docker,git,github,postman,vscode,neovim&theme=dark&perline=6" />
+<br/><br/>
 
-**Frontend (Familiar)**
-
-<img src="https://skillicons.dev/icons?i=nextjs,react&theme=dark&perline=5" />
+**Frontend (Familiar)**<br/>
+<img src="https://skillicons.dev/icons?i=nextjs,react&theme=dark" />
 
 </div>
 
+<br/>
+
 ---
 
-<!-- GitHub Stats -->
-<h2>📊 GitHub Analytics</h2>
+## 📊 &nbsp;GitHub Stats
 
 <div align="center">
 
-<img src="https://github-readme-stats-6fq2mor9b-yuadhistrahangsubbas-projects.vercel.app/api?username=yuadhistrahangsubba&show_icons=true&theme=radical&title_color=0FFFC0&text_color=C0C0C0&icon_color=ff00ff&hide_border=true&count_private=true&rank_icon=github&cache_seconds=1800" height="180"/>
+<img src="https://github-readme-stats.vercel.app/api?username=yuadhistrahangsubba&show_icons=true&theme=radical&title_color=00FFC0&text_color=CCCCCC&icon_color=FF00FF&hide_border=true&count_private=true&rank_icon=github&include_all_commits=true" height="170" />
 &nbsp;&nbsp;
-<img src="https://github-readme-stats-6fq2mor9b-yuadhistrahangsubbas-projects.vercel.app/api/top-langs/?username=yuadhistrahangsubba&layout=compact&theme=radical&title_color=ff00ff&text_color=FFFFFF&hide_border=true&langs_count=8&cache_seconds=1800" height="180"/>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=yuadhistrahangsubba&layout=compact&theme=radical&title_color=FF00FF&text_color=FFFFFF&hide_border=true&langs_count=8" height="170" />
+
+<br/><br/>
+
+<img src="https://streak-stats.demolab.com?user=yuadhistrahangsubba&theme=radical&hide_border=true&ring=00FFC0&fire=FF00FF&currStreakLabel=00FFC0&sideLabels=AAAAAA&dates=888888&background=141321" />
 
 </div>
 
-<div align="center">
-
-<img src="https://streak-stats.demolab.com?user=yuadhistrahangsubba&theme=radical&hide_border=true&ring=0FFFC0&fire=ff00ff&currStreakLabel=0FFFC0&sideLabels=C0C0C0&dates=888888" />
-
-</div>
+<br/>
 
 ---
 
-<!-- Activity Graph -->
-<h2>📈 Contribution Graph</h2>
+## 📈 &nbsp;Contribution Activity
 
 <div align="center">
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=yuadhistrahangsubba&bg_color=141321&color=0FFFC0&line=ff00ff&point=0FFFC0&area_color=ff00ff&area=true&hide_border=true&custom_title=Yuadhistra's%20Contribution%20Graph&days=30" />
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=yuadhistrahangsubba&bg_color=0D1117&color=00FFC0&line=FF00FF&point=00FFC0&area=true&area_color=FF00FF&hide_border=true&custom_title=Yuadhistra%27s%20Contribution%20Activity" />
 
 </div>
 
+<br/>
+
 ---
 
-<!-- Trophies -->
-<h2>🏆 GitHub Trophies</h2>
+## 🐍 &nbsp;Contribution Snake
+
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/yuadhistrahangsubba/yuadhistrahangsubba/output/github-contribution-grid-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/yuadhistrahangsubba/yuadhistrahangsubba/output/github-contribution-grid-snake.svg" />
+  <img alt="Contribution snake animation" src="https://raw.githubusercontent.com/yuadhistrahangsubba/yuadhistrahangsubba/output/github-contribution-grid-snake-dark.svg" />
+</picture>
+
+</div>
+
+<br/>
+
+---
+
+## 🏆 &nbsp;Trophies
 
 <div align="center">
 
@@ -136,44 +123,32 @@ mindset: continuous_improvement
 
 </div>
 
+<br/>
+
 ---
 
-<!-- Philosophy -->
-<h2>💡 Philosophy</h2>
+## 🌐 &nbsp;Connect
 
 <div align="center">
 
-<img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical" />
-
-> _"Great systems are not just built — they are carefully designed, refined, and evolved."_
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/yuadhistra-hang-subba-0791633b3/)
+&nbsp;
+[![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/ram.subba.5015/)
+&nbsp;
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/y.d.luffy9/)
 
 </div>
 
----
-
-<!-- Connect -->
-<h2>🌐 Connect With Me</h2>
-
-<div align="center">
-
-<a href="https://www.linkedin.com/in/yuadhistra-hang-subba-0791633b3/">
-  <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
-</a>
-&nbsp;
-<a href="https://www.facebook.com/ram.subba.5015/">
-  <img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" />
-</a>
-&nbsp;
-<a href="https://www.instagram.com/y.d.luffy9/">
-  <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" />
-</a>
-
-</div>
+<br/>
 
 ---
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=120&section=footer&text=Thanks%20for%20visiting!&fontSize=24&fontColor=fff&animation=twinkling" />
+*"Great systems are not just built — they are carefully designed, refined, and evolved."*
+
+<br/>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:FF00FF,100:00FFC0&height=130&section=footer&text=Thanks%20for%20visiting!&fontSize=22&fontColor=ffffff&animation=twinkling&fontAlignY=65" />
 
 </div>
