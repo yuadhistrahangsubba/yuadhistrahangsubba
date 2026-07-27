@@ -73,9 +73,9 @@ const developer = {
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=yuadhistrahangsubba&show_icons=true&theme=radical&title_color=00FFC0&text_color=CCCCCC&icon_color=FF00FF&hide_border=true&count_private=true&rank_icon=github&include_all_commits=true" height="170" />
+<img src="https://github-readme-stats-nu-nine-99.vercel.app/api?username=yuadhistrahangsubba&show_icons=true&theme=radical&title_color=00FFC0&text_color=CCCCCC&icon_color=FF00FF&hide_border=true&count_private=true&rank_icon=github&include_all_commits=true" height="170" />
 &nbsp;&nbsp;
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=yuadhistrahangsubba&layout=compact&theme=radical&title_color=FF00FF&text_color=FFFFFF&hide_border=true&langs_count=8" height="170" />
+<img src="https://github-readme-stats-nu-nine-99.vercel.app/api/top-langs/?username=yuadhistrahangsubba&layout=compact&theme=radical&title_color=FF00FF&text_color=FFFFFF&hide_border=true&langs_count=8" height="170" />
 
 <br/><br/>
 
