@@ -19,7 +19,7 @@ jobs:
 
       # Needs a classic PAT with `repo` + `read:org` so private and org commits are counted.
       # Runs before snk, whose container creates dist/ as root.
-      - name: Generate streak stats and activity graph
+      - name: Generate streak stats, activity graph and trophies
         env:
           GH_TOKEN: ${{ secrets.STREAK_TOKEN }}
           ACTIVITY_TITLE: "Yuadhistra's Contribution Activity"

@@ -1,11 +1,11 @@
-"""Generate GitHub streak stats and activity graph SVGs that include private contributions.
+"""Generate GitHub streak stats, activity graph and trophy SVGs that include private contributions.
 
 The public contribution calendar leaves out private work unless "Include private
 contributions on my profile" is enabled, so public card services can't see it.
 This script merges the calendar with commits the token can read in private
 repositories (personal and organization), counted per day.
 
-Writes streak-stats.svg and activity-graph.svg into <output_dir>.
+Writes streak-stats.svg, activity-graph.svg and trophies.svg into <output_dir>.
 
 Usage: GH_TOKEN=... python profile_stats.py <username> <output_dir>
 """
@@ -33,6 +33,25 @@ query($login: String!, $from: DateTime, $to: DateTime) {
       contributionCalendar {
         weeks { contributionDays { date contributionCount } }
       }
+      commitContributionsByRepository(maxRepositories: 100) {
+        repository { isPrivate }
+        contributions { totalCount }
+      }
+    }
+  }
+}
+"""
+
+PROFILE_QUERY = """
+query($login: String!, $after: String) {
+  user(login: $login) {
+    followers { totalCount }
+    pullRequests { totalCount }
+    issues { totalCount }
+    repositories(ownerAffiliations: OWNER, first: 100, after: $after) {
+      totalCount
+      nodes { stargazerCount }
+      pageInfo { hasNextPage endCursor }
     }
   }
 }
@@ -52,10 +71,10 @@ THEME = {
 }
 
 
-def graphql(token, variables):
+def graphql(token, variables, query=QUERY):
     req = urllib.request.Request(
         API,
-        data=json.dumps({"query": QUERY, "variables": variables}).encode(),
+        data=json.dumps({"query": query, "variables": variables}).encode(),
         headers={"Authorization": f"bearer {token}", "Content-Type": "application/json"},
     )
     with urllib.request.urlopen(req) as resp:
@@ -66,12 +85,14 @@ def graphql(token, variables):
 
 
 def fetch_calendar(token, login):
-    """Return {date: count} from account creation until today, one year per request."""
+    """Return {date: count} from account creation until today, one year per request,
+    plus the number of commits to public repositories over the same period."""
     today = datetime.now(timezone.utc).date()
     created = graphql(token, {"login": login})["createdAt"]
     start = datetime.fromisoformat(created.replace("Z", "+00:00")).date()
 
     days = {}
+    public_commits = 0
     cursor = start
     while cursor <= today:
         end = min(date(cursor.year, 12, 31), today)
@@ -85,8 +106,30 @@ def fetch_calendar(token, login):
                 d = date.fromisoformat(day["date"])
                 if start <= d <= today:
                     days[d] = day["contributionCount"]
+        for repo in user["contributionsCollection"]["commitContributionsByRepository"]:
+            if not repo["repository"]["isPrivate"]:
+                public_commits += repo["contributions"]["totalCount"]
         cursor = date(cursor.year + 1, 1, 1)
-    return start, today, days
+    return start, today, days, public_commits
+
+
+def fetch_profile(token, login):
+    """Followers, PRs, issues, owned repositories and stars they earned."""
+    stars, after = 0, None
+    while True:
+        user = graphql(token, {"login": login, "after": after}, PROFILE_QUERY)
+        repos = user["repositories"]
+        stars += sum(node["stargazerCount"] for node in repos["nodes"])
+        if not repos["pageInfo"]["hasNextPage"]:
+            break
+        after = repos["pageInfo"]["endCursor"]
+    return {
+        "followers": user["followers"]["totalCount"],
+        "pull_requests": user["pullRequests"]["totalCount"],
+        "issues": user["issues"]["totalCount"],
+        "repositories": repos["totalCount"],
+        "stars": stars,
+    }
 
 
 def rest_pages(token, url):
@@ -307,6 +350,73 @@ def render_activity_svg(days, today, title, span=31):
 """
 
 
+# Rank thresholds, highest first (modelled on github-profile-trophy).
+RANKS = ("SSS", "SS", "S", "AAA", "AA", "A", "B", "C")
+TROPHIES = (
+    ("Commits", "commits", (4000, 2000, 1000, 500, 200, 100, 10, 1)),
+    ("Pull Requests", "pull_requests", (1000, 500, 200, 100, 50, 20, 10, 1)),
+    ("Issues", "issues", (1000, 500, 200, 100, 50, 20, 10, 1)),
+    ("Repositories", "repositories", (50, 45, 40, 35, 30, 20, 10, 1)),
+    ("Stars", "stars", (2000, 700, 200, 100, 50, 30, 10, 1)),
+    ("Followers", "followers", (1000, 400, 200, 100, 50, 20, 10, 1)),
+    ("Experience", "years", (10, 8, 6, 4, 3, 2, 1, 0.5)),
+)
+TROPHY_THEME = {
+    "background": "#0D1117",
+    "text": "#00FFC0",
+    "muted": "#888888",
+    "S": "#FFD700",
+    "A": "#FF00FF",
+    "B": "#00FFC0",
+    "?": "#444C56",
+}
+TROPHY_CUP = (
+    "M -14 -14 H 14 V -4 A 14 14 0 0 1 -14 -4 Z "
+    "M -14 -11 H -21 V -6 A 8 8 0 0 0 -13 2 "
+    "M 14 -11 H 21 V -6 A 8 8 0 0 1 13 2 "
+    "M -3 10 H 3 V 16 H -3 Z M -10 16 H 10 V 20 H -10 Z"
+)
+
+
+def rank_for(value, thresholds):
+    for rank, minimum in zip(RANKS, thresholds):
+        if value >= minimum:
+            return rank
+    return "?"
+
+
+def short_number(n):
+    if isinstance(n, float):
+        return f"{n:.1f}".rstrip("0").rstrip(".")
+    return f"{n / 1000:.1f}k".replace(".0k", "k") if n >= 1000 else str(n)
+
+
+def render_trophies_svg(metrics):
+    t = TROPHY_THEME
+    size, gap = 110, 8
+    width = len(TROPHIES) * size + (len(TROPHIES) - 1) * gap
+    cards = []
+    for i, (title, key, thresholds) in enumerate(TROPHIES):
+        value = metrics[key]
+        rank = rank_for(value, thresholds)
+        color = t["?"] if rank == "?" else t.get(rank[0], t["B"])
+        unit = " yrs" if key == "years" else ""
+        cards.append(f"""  <g transform="translate({i * (size + gap)} 0)">
+    <rect width="{size}" height="{size}" rx="6" fill="{t['background']}"/>
+    <g transform="translate({size / 2} 34)" fill="none" stroke="{color}" stroke-width="2.5" stroke-linejoin="round">
+      <path d="{TROPHY_CUP}"/>
+    </g>
+    <text x="{size / 2}" y="34" text-anchor="middle" font-size="{8 if len(rank) == 3 else 10}" font-weight="800" fill="{color}">{rank}</text>
+    <text x="{size / 2}" y="76" text-anchor="middle" font-size="13" font-weight="700" fill="{t['text']}">{escape(title)}</text>
+    <text x="{size / 2}" y="94" text-anchor="middle" font-size="12" fill="{t['muted']}">{short_number(value)}{unit}</text>
+  </g>""")
+    nl = "\n"
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{size}" viewBox="0 0 {width} {size}" font-family="'Segoe UI', Ubuntu, sans-serif">
+{nl.join(cards)}
+</svg>
+"""
+
+
 def main():
     if len(sys.argv) != 3:
         raise SystemExit("usage: profile_stats.py <username> <output_dir>")
@@ -315,7 +425,7 @@ def main():
     if not token:
         raise SystemExit("GH_TOKEN is not set")
 
-    start, today, calendar = fetch_calendar(token, login)
+    start, today, calendar, public_commits = fetch_calendar(token, login)
     private = fetch_private_commits(token, login, start)
     days = merge(calendar, {d: c for d, c in private.items() if start <= d <= today})
     stats = compute_stats(start, today, days)
@@ -327,7 +437,13 @@ def main():
     with open(os.path.join(out_dir, "activity-graph.svg"), "w") as f:
         title = os.environ.get("ACTIVITY_TITLE", f"{login}'s Contribution Activity")
         f.write(render_activity_svg(days, today, title))
+    metrics = fetch_profile(token, login)
+    metrics["commits"] = public_commits + sum(private.values())
+    metrics["years"] = round((today - start).days / 365.25, 1)
+    with open(os.path.join(out_dir, "trophies.svg"), "w") as f:
+        f.write(render_trophies_svg(metrics))
     print(f"total={stats['total']} current={stats['current']} longest={stats['longest']}")
+    print(f"trophies={metrics}")
 
 
 if __name__ == "__main__":

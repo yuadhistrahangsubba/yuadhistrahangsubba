@@ -119,7 +119,7 @@ const developer = {
 
 <div align="center">
 
-<img src="https://github-profile-trophy.vercel.app/?username=yuadhistrahangsubba&theme=matrix&no-frame=true&margin-w=8&margin-h=8&column=7" />
+<img src="https://raw.githubusercontent.com/yuadhistrahangsubba/yuadhistrahangsubba/output/trophies.svg" alt="GitHub trophies" />
 
 </div>
 
