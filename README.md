@@ -91,7 +91,7 @@ const developer = {
 
 <div align="center">
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=yuadhistrahangsubba&bg_color=0D1117&color=00FFC0&line=FF00FF&point=00FFC0&area=true&area_color=FF00FF&hide_border=true&custom_title=Yuadhistra%27s%20Contribution%20Activity" />
+<img src="https://raw.githubusercontent.com/yuadhistrahangsubba/yuadhistrahangsubba/output/activity-graph.svg" alt="Contribution activity graph (public + private)" />
 
 </div>
 

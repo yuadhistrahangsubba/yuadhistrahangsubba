@@ -19,10 +19,11 @@ jobs:
 
       # Needs a classic PAT with `repo` + `read:org` so private and org commits are counted.
       # Runs before snk, whose container creates dist/ as root.
-      - name: Generate streak stats
+      - name: Generate streak stats and activity graph
         env:
           GH_TOKEN: ${{ secrets.STREAK_TOKEN }}
-        run: python3 .github/scripts/streak.py ${{ github.repository_owner }} dist/streak-stats.svg
+          ACTIVITY_TITLE: "Yuadhistra's Contribution Activity"
+        run: python3 .github/scripts/profile_stats.py ${{ github.repository_owner }} dist
 
       - uses: Platane/snk@v3
         id: snake

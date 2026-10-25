@@ -1,11 +1,13 @@
-"""Generate a GitHub streak stats SVG that includes private contributions.
+"""Generate GitHub streak stats and activity graph SVGs that include private contributions.
 
 The public contribution calendar leaves out private work unless "Include private
-contributions on my profile" is enabled, so public streak services can't see it.
+contributions on my profile" is enabled, so public card services can't see it.
 This script merges the calendar with commits the token can read in private
 repositories (personal and organization), counted per day.
 
-Usage: GH_TOKEN=... python streak.py <username> <output.svg>
+Writes streak-stats.svg and activity-graph.svg into <output_dir>.
+
+Usage: GH_TOKEN=... python profile_stats.py <username> <output_dir>
 """
 
 import http.client
@@ -233,10 +235,82 @@ def render_svg(stats, today):
 """
 
 
+ACTIVITY_THEME = {
+    "background": "#0D1117",
+    "text": "#00FFC0",
+    "line": "#FF00FF",
+    "point": "#00FFC0",
+    "area": "#FF00FF",
+    "grid": "#21262D",
+}
+
+
+def nice_step(peak, ticks=5):
+    """Smallest 1/2/5 x 10^n step that covers peak in about `ticks` gridlines."""
+    raw = max(peak, 1) / ticks
+    magnitude = 10 ** (len(str(int(raw))) - 1)
+    for mult in (1, 2, 5, 10):
+        if mult * magnitude >= raw:
+            return mult * magnitude
+    return 10 * magnitude
+
+
+def render_activity_svg(days, today, title, span=31):
+    t = ACTIVITY_THEME
+    width, height = 1000, 360
+    left, right, top, bottom = 70, 30, 70, 60
+    plot_w, plot_h = width - left - right, height - top - bottom
+
+    dates = [today - timedelta(days=span - 1 - i) for i in range(span)]
+    counts = [days.get(d, 0) for d in dates]
+    step = nice_step(max(counts))
+    y_max = step * max(1, -(-max(counts) // step))
+
+    def x(i):
+        return left + plot_w * i / (span - 1)
+
+    def y(v):
+        return top + plot_h * (1 - v / y_max)
+
+    points = [(x(i), y(c)) for i, c in enumerate(counts)]
+    line = " ".join(f"{px:.1f},{py:.1f}" for px, py in points)
+    area = f"{left},{top + plot_h} {line} {left + plot_w},{top + plot_h}"
+
+    grid = []
+    for v in range(0, y_max + 1, step):
+        gy = y(v)
+        grid.append(f'<line x1="{left}" y1="{gy:.1f}" x2="{left + plot_w}" y2="{gy:.1f}" stroke="{t["grid"]}"/>')
+        grid.append(f'<text x="{left - 12}" y="{gy + 4:.1f}" text-anchor="end">{v}</text>')
+    labels = [
+        f'<text x="{x(i):.1f}" y="{top + plot_h + 22}" text-anchor="middle">{d.day}</text>'
+        for i, d in enumerate(dates)
+    ]
+    dots = [
+        f'<circle cx="{px:.1f}" cy="{py:.1f}" r="4" fill="{t["point"]}"><title>{dates[i].isoformat()}: {counts[i]}</title></circle>'
+        for i, (px, py) in enumerate(points)
+    ]
+    period = f"{dates[0].strftime('%b %-d')} - {dates[-1].strftime('%b %-d, %Y')}"
+    nl = "\n    "
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">
+  <rect width="{width}" height="{height}" rx="6" fill="{t['background']}"/>
+  <g font-family="'Segoe UI', Ubuntu, sans-serif" fill="{t['text']}" font-size="12">
+    <text x="{width / 2}" y="38" text-anchor="middle" font-size="22" font-weight="700">{escape(title)}</text>
+    {nl.join(grid)}
+    {nl.join(labels)}
+    <text x="{left + plot_w / 2}" y="{height - 14}" text-anchor="middle" font-size="13">{escape(period)}</text>
+    <text transform="translate(20 {top + plot_h / 2}) rotate(-90)" text-anchor="middle" font-size="13">Contributions</text>
+  </g>
+  <polygon points="{area}" fill="{t['area']}" fill-opacity="0.15"/>
+  <polyline points="{line}" fill="none" stroke="{t['line']}" stroke-width="2.5" stroke-linejoin="round"/>
+  {nl.join(dots)}
+</svg>
+"""
+
+
 def main():
     if len(sys.argv) != 3:
-        raise SystemExit("usage: streak.py <username> <output.svg>")
-    login, out = sys.argv[1], sys.argv[2]
+        raise SystemExit("usage: profile_stats.py <username> <output_dir>")
+    login, out_dir = sys.argv[1], sys.argv[2]
     token = os.environ.get("GH_TOKEN")
     if not token:
         raise SystemExit("GH_TOKEN is not set")
@@ -246,9 +320,13 @@ def main():
     days = merge(calendar, {d: c for d, c in private.items() if start <= d <= today})
     stats = compute_stats(start, today, days)
     print(f"private commits found: {sum(private.values())}")
-    os.makedirs(os.path.dirname(out) or ".", exist_ok=True)
-    with open(out, "w") as f:
+
+    os.makedirs(out_dir, exist_ok=True)
+    with open(os.path.join(out_dir, "streak-stats.svg"), "w") as f:
         f.write(render_svg(stats, today))
+    with open(os.path.join(out_dir, "activity-graph.svg"), "w") as f:
+        title = os.environ.get("ACTIVITY_TITLE", f"{login}'s Contribution Activity")
+        f.write(render_activity_svg(days, today, title))
     print(f"total={stats['total']} current={stats['current']} longest={stats['longest']}")
 
 
