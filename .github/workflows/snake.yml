@@ -17,6 +17,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Needs a classic PAT with `repo` + `read:org` so private and org commits are counted.
+      # Runs before snk, whose container creates dist/ as root.
+      - name: Generate streak stats
+        env:
+          GH_TOKEN: ${{ secrets.STREAK_TOKEN }}
+        run: python3 .github/scripts/streak.py ${{ github.repository_owner }} dist/streak-stats.svg
+
       - uses: Platane/snk@v3
         id: snake
         with:
@@ -24,12 +31,6 @@ jobs:
           outputs: |
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
-
-      # Needs a classic PAT with `repo` + `read:org` so private and org commits are counted.
-      - name: Generate streak stats
-        env:
-          GH_TOKEN: ${{ secrets.STREAK_TOKEN }}
-        run: python3 .github/scripts/streak.py ${{ github.repository_owner }} dist/streak-stats.svg
 
       - uses: crazy-max/ghaction-github-pages@v4
         with:
