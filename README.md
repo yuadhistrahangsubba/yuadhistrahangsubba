@@ -79,7 +79,7 @@ const developer = {
 
 <br/><br/>
 
-<img src="https://streak-stats.demolab.com?user=yuadhistrahangsubba&theme=radical&hide_border=true&ring=00FFC0&fire=FF00FF&currStreakLabel=00FFC0&sideLabels=AAAAAA&dates=888888&background=141321" />
+<img src="https://raw.githubusercontent.com/yuadhistrahangsubba/yuadhistrahangsubba/output/streak-stats.svg" alt="GitHub streak stats (public + private)" />
 
 </div>
 

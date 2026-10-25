@@ -1,8 +1,8 @@
-name: Generate Snake
+name: Generate Profile Assets
 
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 */6 * * *"
   workflow_dispatch:
   push:
     branches:
@@ -13,7 +13,10 @@ jobs:
     permissions:
       contents: write
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
+      - uses: actions/checkout@v4
+
       - uses: Platane/snk@v3
         id: snake
         with:
@@ -21,6 +24,12 @@ jobs:
           outputs: |
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+
+      # Needs a classic PAT with `repo` + `read:org` so private and org commits are counted.
+      - name: Generate streak stats
+        env:
+          GH_TOKEN: ${{ secrets.STREAK_TOKEN }}
+        run: python3 .github/scripts/streak.py ${{ github.repository_owner }} dist/streak-stats.svg
 
       - uses: crazy-max/ghaction-github-pages@v4
         with:
