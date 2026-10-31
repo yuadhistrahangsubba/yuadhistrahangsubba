@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="818" height="110" viewBox="0 0 818 110" font-family="'Segoe UI', Ubuntu, sans-serif">
+  <g transform="translate(0 0)">
+    <rect width="110" height="110" rx="6" fill="#0D1117"/>
+    <g transform="translate(55.0 34)" fill="none" stroke="#FFD700" stroke-width="2.5" stroke-linejoin="round">
+      <path d="M -14 -14 H 14 V -4 A 14 14 0 0 1 -14 -4 Z M -14 -11 H -21 V -6 A 8 8 0 0 0 -13 2 M 14 -11 H 21 V -6 A 8 8 0 0 1 13 2 M -3 10 H 3 V 16 H -3 Z M -10 16 H 10 V 20 H -10 Z"/>
+    </g>
+    <text x="55.0" y="34" text-anchor="middle" font-size="10" font-weight="800" fill="#FFD700">SS</text>
+    <text x="55.0" y="76" text-anchor="middle" font-size="13" font-weight="700" fill="#00FFC0">Commits</text>
+    <text x="55.0" y="94" text-anchor="middle" font-size="12" fill="#888888">3.6k</text>
+  </g>
+  <g transform="translate(118 0)">
+    <rect width="110" height="110" rx="6" fill="#0D1117"/>
+    <g transform="translate(55.0 34)" fill="none" stroke="#FFD700" stroke-width="2.5" stroke-linejoin="round">
+      <path d="M -14 -14 H 14 V -4 A 14 14 0 0 1 -14 -4 Z M -14 -11 H -21 V -6 A 8 8 0 0 0 -13 2 M 14 -11 H 21 V -6 A 8 8 0 0 1 13 2 M -3 10 H 3 V 16 H -3 Z M -10 16 H 10 V 20 H -10 Z"/>
+    </g>
+    <text x="55.0" y="34" text-anchor="middle" font-size="10" font-weight="800" fill="#FFD700">SS</text>
+    <text x="55.0" y="76" text-anchor="middle" font-size="13" font-weight="700" fill="#00FFC0">Pull Requests</text>
+    <text x="55.0" y="94" text-anchor="middle" font-size="12" fill="#888888">614</text>
+  </g>
+  <g transform="translate(236 0)">
+    <rect width="110" height="110" rx="6" fill="#0D1117"/>
+    <g transform="translate(55.0 34)" fill="none" stroke="#00FFC0" stroke-width="2.5" stroke-linejoin="round">
+      <path d="M -14 -14 H 14 V -4 A 14 14 0 0 1 -14 -4 Z M -14 -11 H -21 V -6 A 8 8 0 0 0 -13 2 M 14 -11 H 21 V -6 A 8 8 0 0 1 13 2 M -3 10 H 3 V 16 H -3 Z M -10 16 H 10 V 20 H -10 Z"/>
+    </g>
+    <text x="55.0" y="34" text-anchor="middle" font-size="10" font-weight="800" fill="#00FFC0">C</text>
+    <text x="55.0" y="76" text-anchor="middle" font-size="13" font-weight="700" fill="#00FFC0">Issues</text>
+    <text x="55.0" y="94" text-anchor="middle" font-size="12" fill="#888888">1</text>
+  </g>
+  <g transform="translate(354 0)">
+    <rect width="110" height="110" rx="6" fill="#0D1117"/>
+    <g transform="translate(55.0 34)" fill="none" stroke="#00FFC0" stroke-width="2.5" stroke-linejoin="round">
+      <path d="M -14 -14 H 14 V -4 A 14 14 0 0 1 -14 -4 Z M -14 -11 H -21 V -6 A 8 8 0 0 0 -13 2 M 14 -11 H 21 V -6 A 8 8 0 0 1 13 2 M -3 10 H 3 V 16 H -3 Z M -10 16 H 10 V 20 H -10 Z"/>
+    </g>
+    <text x="55.0" y="34" text-anchor="middle" font-size="10" font-weight="800" fill="#00FFC0">B</text>
+    <text x="55.0" y="76" text-anchor="middle" font-size="13" font-weight="700" fill="#00FFC0">Repositories</text>
+    <text x="55.0" y="94" text-anchor="middle" font-size="12" fill="#888888">17</text>
+  </g>
+  <g transform="translate(472 0)">
+    <rect width="110" height="110" rx="6" fill="#0D1117"/>
+    <g transform="translate(55.0 34)" fill="none" stroke="#444C56" stroke-width="2.5" stroke-linejoin="round">
+      <path d="M -14 -14 H 14 V -4 A 14 14 0 0 1 -14 -4 Z M -14 -11 H -21 V -6 A 8 8 0 0 0 -13 2 M 14 -11 H 21 V -6 A 8 8 0 0 1 13 2 M -3 10 H 3 V 16 H -3 Z M -10 16 H 10 V 20 H -10 Z"/>
+    </g>
+    <text x="55.0" y="34" text-anchor="middle" font-size="10" font-weight="800" fill="#444C56">?</text>
+    <text x="55.0" y="76" text-anchor="middle" font-size="13" font-weight="700" fill="#00FFC0">Stars</text>
+    <text x="55.0" y="94" text-anchor="middle" font-size="12" fill="#888888">0</text>
+  </g>
+  <g transform="translate(590 0)">
+    <rect width="110" height="110" rx="6" fill="#0D1117"/>
+    <g transform="translate(55.0 34)" fill="none" stroke="#00FFC0" stroke-width="2.5" stroke-linejoin="round">
+      <path d="M -14 -14 H 14 V -4 A 14 14 0 0 1 -14 -4 Z M -14 -11 H -21 V -6 A 8 8 0 0 0 -13 2 M 14 -11 H 21 V -6 A 8 8 0 0 1 13 2 M -3 10 H 3 V 16 H -3 Z M -10 16 H 10 V 20 H -10 Z"/>
+    </g>
+    <text x="55.0" y="34" text-anchor="middle" font-size="10" font-weight="800" fill="#00FFC0">C</text>
+    <text x="55.0" y="76" text-anchor="middle" font-size="13" font-weight="700" fill="#00FFC0">Followers</text>
+    <text x="55.0" y="94" text-anchor="middle" font-size="12" fill="#888888">4</text>
+  </g>
+  <g transform="translate(708 0)">
+    <rect width="110" height="110" rx="6" fill="#0D1117"/>
+    <g transform="translate(55.0 34)" fill="none" stroke="#FF00FF" stroke-width="2.5" stroke-linejoin="round">
+      <path d="M -14 -14 H 14 V -4 A 14 14 0 0 1 -14 -4 Z M -14 -11 H -21 V -6 A 8 8 0 0 0 -13 2 M 14 -11 H 21 V -6 A 8 8 0 0 1 13 2 M -3 10 H 3 V 16 H -3 Z M -10 16 H 10 V 20 H -10 Z"/>
+    </g>
+    <text x="55.0" y="34" text-anchor="middle" font-size="8" font-weight="800" fill="#FF00FF">AAA</text>
+    <text x="55.0" y="76" text-anchor="middle" font-size="13" font-weight="700" fill="#00FFC0">Experience</text>
+    <text x="55.0" y="94" text-anchor="middle" font-size="12" fill="#888888">5.5 yrs</text>
+  </g>
+</svg>
