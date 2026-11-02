@@ -3,7 +3,8 @@
 The public contribution calendar leaves out private work unless "Include private
 contributions on my profile" is enabled, so public card services can't see it.
 This script merges the calendar with commits the token can read in private
-repositories (personal and organization), counted per day.
+repositories (personal and organization), on every branch, counted per day in
+PROFILE_TZ (default UTC).
 
 Writes streak-stats.svg, activity-graph.svg and trophies.svg into <output_dir>.
 
@@ -19,8 +20,11 @@ import time
 import urllib.error
 import urllib.request
 from collections import Counter
+from concurrent.futures import ThreadPoolExecutor
 from datetime import date, datetime, timedelta, timezone
 from html import escape
+from urllib.parse import quote
+from zoneinfo import ZoneInfo
 
 API = "https://api.github.com/graphql"
 REST = "https://api.github.com"
@@ -84,10 +88,10 @@ def graphql(token, variables, query=QUERY):
     return payload["data"]["user"]
 
 
-def fetch_calendar(token, login):
+def fetch_calendar(token, login, tz):
     """Return {date: count} from account creation until today, one year per request,
     plus the number of commits to public repositories over the same period."""
-    today = datetime.now(timezone.utc).date()
+    today = datetime.now(tz).date()
     created = graphql(token, {"login": login})["createdAt"]
     start = datetime.fromisoformat(created.replace("Z", "+00:00")).date()
 
@@ -132,8 +136,9 @@ def fetch_profile(token, login):
     }
 
 
-def rest_pages(token, url):
-    """Yield items from a paginated REST endpoint, following Link headers."""
+def rest_pages(token, url, key=None):
+    """Yield items from a paginated REST endpoint, following Link headers.
+    `key` names the list inside an object response (e.g. compare's "commits")."""
     while url:
         req = urllib.request.Request(url, headers={
             "Authorization": f"bearer {token}",
@@ -155,30 +160,57 @@ def rest_pages(token, url):
                 if attempt == 2:
                     raise
                 time.sleep(2 ** attempt)
-        yield from items
+        yield from items[key] if key else items
         match = re.search(r'<([^>]+)>;\s*rel="next"', link)
         url = match.group(1) if match else None
 
 
-def fetch_private_commits(token, login, start):
-    """Return {date: count} of the user's commits on default branches of private repos."""
-    repos = rest_pages(
-        token,
-        f"{REST}/user/repos?visibility=private"
-        "&affiliation=owner,collaborator,organization_member&per_page=100",
-    )
-    days = Counter()
-    for repo in repos:
-        if repo["fork"]:
-            continue  # GitHub doesn't count commits to forks either.
-        commits = rest_pages(
+def repo_commits(token, repo, authors, since):
+    """Return {sha: author date} of commits by any of `authors` on every branch of
+    `repo`, so unmerged feature-branch work counts and merged work counts once.
+
+    The default branch is filtered server-side; every other branch costs one
+    compare request for just the commits it has on top of the default branch."""
+    base = f"{REST}/repos/{repo['full_name']}"
+    default = repo["default_branch"]
+    shas = {}
+    for author in authors:
+        for commit in rest_pages(token, f"{base}/commits?author={quote(author, safe='')}&since={since}&per_page=100"):
+            shas[commit["sha"]] = commit["commit"]["author"]["date"]
+    for branch in rest_pages(token, f"{base}/branches?per_page=100"):
+        if branch["name"] == default:
+            continue
+        compare = f"{base}/compare/{quote(default, safe='')}...{quote(branch['name'], safe='')}?per_page=100"
+        for commit in rest_pages(token, compare, key="commits"):
+            login = (commit.get("author") or {}).get("login")
+            date_ = commit["commit"]["author"]["date"]
+            if (login in authors or commit["commit"]["author"]["email"] in authors) and date_ >= since:
+                shas[commit["sha"]] = date_
+    return shas
+
+
+def fetch_private_commits(token, login, start, tz):
+    """Return {date: count} of the user's commits on all branches of private repos,
+    dated in `tz`. AUTHOR_EMAILS adds commit emails not linked to the account."""
+    authors = [login] + [e.strip() for e in os.environ.get("AUTHOR_EMAILS", "").split(",") if e.strip()]
+    since = f"{start.isoformat()}T00:00:00Z"
+    repos = [
+        repo for repo in rest_pages(
             token,
-            f"{REST}/repos/{repo['full_name']}/commits"
-            f"?author={login}&since={start.isoformat()}T00:00:00Z&per_page=30",
+            f"{REST}/user/repos?visibility=private"
+            "&affiliation=owner,collaborator,organization_member&per_page=100",
         )
-        for commit in commits:
-            stamp = commit["commit"]["author"]["date"]
-            days[datetime.fromisoformat(stamp.replace("Z", "+00:00")).date()] += 1
+        # GitHub doesn't count commits to forks either; repos not pushed since
+        # `start` can't hold commits we're looking for.
+        if not repo["fork"] and (repo["pushed_at"] or "") >= since
+    ]
+    shas = {}
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        for found in pool.map(lambda repo: repo_commits(token, repo, authors, since), repos):
+            shas.update(found)
+    days = Counter()
+    for stamp in shas.values():
+        days[datetime.fromisoformat(stamp.replace("Z", "+00:00")).astimezone(tz).date()] += 1
     return days
 
 
@@ -425,8 +457,9 @@ def main():
     if not token:
         raise SystemExit("GH_TOKEN is not set")
 
-    start, today, calendar, public_commits = fetch_calendar(token, login)
-    private = fetch_private_commits(token, login, start)
+    tz = ZoneInfo(os.environ.get("PROFILE_TZ", "UTC"))
+    start, today, calendar, public_commits = fetch_calendar(token, login, tz)
+    private = fetch_private_commits(token, login, start, tz)
     days = merge(calendar, {d: c for d, c in private.items() if start <= d <= today})
     stats = compute_stats(start, today, days)
     print(f"private commits found: {sum(private.values())}")

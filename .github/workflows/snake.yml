@@ -23,6 +23,9 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.STREAK_TOKEN }}
           ACTIVITY_TITLE: "Yuadhistra's Contribution Activity"
+          PROFILE_TZ: Asia/Thimphu
+          # Optional comma-separated commit emails not linked to the GitHub account.
+          AUTHOR_EMAILS: ${{ vars.AUTHOR_EMAILS }}
         run: python3 .github/scripts/profile_stats.py ${{ github.repository_owner }} dist
 
       - uses: Platane/snk@v3
