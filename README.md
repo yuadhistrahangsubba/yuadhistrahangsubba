@@ -28,27 +28,9 @@
 
 ## 🚀 &nbsp;Tech Stack
 
-<div align="center">
-
-**Backend & Runtime**<br/>
-<img src="https://skillicons.dev/icons?i=nestjs,nodejs,ts,js,rust&theme=dark" />
-
-<br/><br/>
-
-**Databases & Cache**<br/>
-<img src="https://skillicons.dev/icons?i=postgres,mysql,redis&theme=dark" />
-
-<br/><br/>
-
-**Tools & DevOps**<br/>
-<img src="https://skillicons.dev/icons?i=docker,git,github,postman,vscode,neovim&theme=dark" />
-
-<br/><br/>
-
-**Frontend (Familiar)**<br/>
-<img src="https://skillicons.dev/icons?i=nextjs,react&theme=dark" />
-
-</div>
+<p align="center">
+  <img src="./assets/tech-stack.svg" alt="Tech stack. Core: NestJS, Node.js, TypeScript, JavaScript. Data: PostgreSQL, MySQL, Redis. Learning: Rust. Frontend (familiar): Next.js, React. Ship pipeline: Git, GitHub, Docker. Daily tools: VS Code, Neovim, Postman." width="100%"/>
+</p>
 
 <br/>
 
