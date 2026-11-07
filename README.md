@@ -18,24 +18,9 @@
 
 ## 🧑‍💻 &nbsp;About Me
 
-```typescript
-const developer = {
-  name:     "Yuadhistra Hang Subba",
-  alias:    "Y.D",
-  location: "Bhutan 🇧🇹",
-  role:     "Backend Developer",
-
-  stack: {
-    core:     ["NestJS", "Node.js", "TypeScript"],
-    database: ["PostgreSQL", "MySQL", "Redis"],
-    infra:    ["Docker", "NATS", "GitHub Actions"],
-    learning: "Rust 🦀",
-  },
-
-  patterns: ["Microservices", "Clean Architecture", "CQRS", "Event-Driven"],
-  motto:    "Code with purpose, build with precision ⚡",
-};
-```
+<p align="center">
+  <img src="./assets/about-me-platform.svg" alt="YD-PLATFORM: Yuadhistra Hang Subba (Y.D), Backend Developer from Bhutan, drawn as a live event-driven system. NestJS, Node.js, TypeScript, PostgreSQL, MySQL, Redis, Docker, NATS, GitHub Actions; patterns: Microservices, Clean Architecture, CQRS, Event-Driven; learning Rust. Motto: Code with purpose, build with precision." width="100%"/>
+</p>
 
 <br/>
 
