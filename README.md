@@ -74,13 +74,11 @@
 
 ---
 
-## 🏆 &nbsp;Trophies
+## 🏆 &nbsp;Achievements
 
-<div align="center">
-
-<img src="https://raw.githubusercontent.com/yuadhistrahangsubba/yuadhistrahangsubba/output/trophies.svg" alt="GitHub trophies" />
-
-</div>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/yuadhistrahangsubba/yuadhistrahangsubba/output/trophies.svg" alt="Achievement skill tree: player level and gamerscore in the centre, with tiers from Bronze to Diamond for commits, pull requests, longest streak, years on GitHub, repositories, issues, followers and stars. Refreshed every 6 hours." width="100%"/>
+</p>
 
 <br/>
 
