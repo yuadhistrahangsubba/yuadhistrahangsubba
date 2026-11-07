@@ -38,17 +38,9 @@
 
 ## 📊 &nbsp;GitHub Stats
 
-<div align="center">
-
-<img src="https://github-readme-stats-nu-nine-99.vercel.app/api?username=yuadhistrahangsubba&show_icons=true&theme=radical&title_color=00FFC0&text_color=CCCCCC&icon_color=FF00FF&hide_border=true&count_private=true&rank_icon=github&include_all_commits=true" height="170" />
-&nbsp;&nbsp;
-<img src="https://github-readme-stats-nu-nine-99.vercel.app/api/top-langs/?username=yuadhistrahangsubba&layout=compact&theme=radical&title_color=FF00FF&text_color=FFFFFF&hide_border=true&langs_count=8" height="170" />
-
-<br/><br/>
-
-<img src="https://raw.githubusercontent.com/yuadhistrahangsubba/yuadhistrahangsubba/output/streak-stats.svg" alt="GitHub streak stats (public + private)" />
-
-</div>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/yuadhistrahangsubba/yuadhistrahangsubba/output/dashboard.svg" alt="GitHub stats dashboard (public + private): current and longest streak, total contributions, active-day ratio, last 30 days of contributions, languages, contribution heatmap, pull requests, issues, repositories, stars and followers. Refreshed every 6 hours." width="100%"/>
+</p>
 
 <br/>
 
