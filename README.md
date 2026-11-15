@@ -19,7 +19,7 @@
 ## 🧑‍💻 &nbsp;About Me
 
 <p align="center">
-  <img src="./assets/about-me-platform.svg" alt="YD-PLATFORM: Yuadhistra Hang Subba (Y.D), Backend Developer from Bhutan, drawn as a live event-driven system. NestJS, Node.js, TypeScript, PostgreSQL, MySQL, Redis, Docker, NATS, GitHub Actions; patterns: Microservices, Clean Architecture, CQRS, Event-Driven; learning Rust. Motto: Code with purpose, build with precision." width="100%"/>
+  <img src="./assets/about-me.svg" alt="Hi, I'm Yuadhistra. Most people just call me Y.D. I'm a backend developer from Bhutan. I like the quiet parts of software: schemas that age well, queues that don't drop messages, APIs nobody has to think twice about. Right now: building services for EMIS, learning Rust, getting CQRS and clean architecture right in practice. Off the keyboard: trekking, football on weekends, games. What I reach for: NestJS, TypeScript, Node.js, PostgreSQL, MySQL, Redis, Docker, NATS, GitHub Actions. Code with purpose, build with precision." width="100%"/>
 </p>
 
 <br/>
