@@ -47,7 +47,11 @@
 ## 📊 &nbsp;GitHub Stats
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/yuadhistrahangsubba/yuadhistrahangsubba/output/dashboard.svg" alt="GitHub stats dashboard (public + private): current and longest streak, total contributions, active-day ratio, last 30 days of contributions, languages, contribution heatmap, pull requests, issues, repositories, stars and followers. Refreshed every 6 hours." width="100%"/>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/yuadhistrahangsubba/yuadhistrahangsubba/output/dashboard-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/yuadhistrahangsubba/yuadhistrahangsubba/output/dashboard.svg" />
+  <img src="https://raw.githubusercontent.com/yuadhistrahangsubba/yuadhistrahangsubba/output/dashboard.svg" alt="GitHub in numbers (public + private): total contributions and this year's share, current and longest streak, days active over the last year, pull requests, contributions by weekday, top languages, contributions per year, busiest day, repositories, followers and stars. Refreshed every 6 hours." width="100%"/>
+</picture>
 </p>
 
 <br/>
