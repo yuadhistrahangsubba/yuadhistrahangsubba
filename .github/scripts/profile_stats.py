@@ -6,7 +6,7 @@ This script merges the calendar with commits the token can read in private
 repositories (personal and organization), on every branch, counted per day in
 PROFILE_TZ (default UTC).
 
-Writes streak-stats.svg, activity-graph.svg, trophies.svg (achievement skill tree) and dashboard.svg into <output_dir>.
+Writes streak-stats.svg, activity-graph.svg, trophies.svg (achievement skill tree), dashboard.svg and dashboard-dark.svg into <output_dir>.
 
 Usage: GH_TOKEN=... python profile_stats.py <username> <output_dir>
 """
@@ -581,174 +581,150 @@ DASH = {
 DASH_MONO = "\"JetBrains Mono\",\"SF Mono\",Menlo,Consolas,monospace"
 
 
-def plural(n, word):
-    return f"{n:,} {word}{'' if n == 1 else 's'}"
+PAPER = {
+    "light": dict(bg="#fbf8f2", ink="#1f1c18", soft="#4a443c", muted="#8a8174",
+                  rule="#e4ddd0", bar="#d9d1c3", accent="#c0561b"),
+    "dark":  dict(bg="#15130f", ink="#efe9de", soft="#cfc6b8", muted="#8d8578",
+                  rule="#2e2a23", bar="#3a352d", accent="#e98a45"),
+}
+PAPER_SERIF = "'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif"
+PAPER_SANS = "-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+DAY_NAMES = ("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")
 
 
-def render_dashboard_svg(login, days, today, start, stats, metrics):
-    """One observability-style dashboard: streaks as uptime, contributions as
-    requests, weekday load, contributions per year, languages and counters.
-    The daily graph and calendar are left to activity-graph.svg and the snake."""
-    t = DASH
-    W, H = 920, 556
-    out = []
-    a = out.append
+def _short(n):
+    return f"{n / 1000:.1f}k".replace(".0k", "k") if n >= 10000 else f"{n:,}"
 
-    def panel(x, y, w, h, title, right="", delay=0.0, accent=t["purple"]):
-        a(f'<g class="in" style="animation-delay:{delay:.2f}s">')
-        a(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="14" fill="{t["panel"]}" fill-opacity=".9" stroke="#ffffff" stroke-opacity=".08"/>')
-        a(f'<rect x="{x + 16}" y="{y + 16}" width="6" height="6" rx="3" fill="{accent}"/>')
-        a(f'<text x="{x + 30}" y="{y + 23}" font-size="10.5" font-weight="700" fill="{t["dim"]}" letter-spacing=".12em">{escape(title.upper())}</text>')
-        if right:
-            a(f'<text x="{x + w - 16}" y="{y + 23}" font-size="10.5" fill="{t["muted"]}" text-anchor="end">{right}</text>')
 
-    def bars(x0, y0, w, h, labels, values, best, delay):
-        left, right, top, bottom = x0 + 24, x0 + w - 24, y0 + 52, y0 + h - 28
-        slot = (right - left) / len(values)
-        bw = min(46, slot * 0.56)
-        vmax = max(values) or 1
-        for i, (label, v) in enumerate(zip(labels, values)):
-            bx = left + slot * i + (slot - bw) / 2
-            bh = max((bottom - top) * v / vmax, 2)
-            col, op = (t["green"], 1) if i == best else (t["purple"], .55)
-            a(f'<rect x="{bx:.1f}" y="{top}" width="{bw:.1f}" height="{bottom - top}" rx="5" fill="#ffffff" fill-opacity=".04"/>')
-            a(f'<rect class="rise" style="animation-delay:{delay + i * 0.07:.2f}s" x="{bx:.1f}" y="{bottom - bh:.1f}" width="{bw:.1f}" height="{bh:.1f}" rx="5" fill="{col}" fill-opacity="{op}"><title>{escape(label)}: {v:,}</title></rect>')
-            a(f'<text x="{bx + bw / 2:.1f}" y="{bottom - bh - 6:.1f}" font-size="10" fill="{t["fg"] if i == best else t["dim"]}" text-anchor="middle">{short_number(v)}</text>')
-            a(f'<text x="{bx + bw / 2:.1f}" y="{bottom + 16}" font-size="9.5" fill="{t["muted"]}" text-anchor="middle">{escape(label)}</text>')
+def _date(d, today):
+    return d.strftime("%b %-d") if d.year == today.year else d.strftime("%b %-d, %Y")
 
-    # --- figures -----------------------------------------------------------
+
+def render_dashboard_svg(login, days, today, start, stats, metrics, theme="light"):
+    """'GitHub, in numbers': an editorial page in the same paper style as the About Me
+    and Tech Stack cards. theme is "light" or "dark"; main() writes both."""
+    t = PAPER[theme]
+    W, H = 920, 600
+    o = []
+    a = o.append
+
+    def text(x, y, s, size=15, fill=None, italic=False, anchor="start", cls="s", extra=""):
+        st = ' font-style="italic"' if italic else ""
+        an = f' text-anchor="{anchor}"' if anchor != "start" else ""
+        a(f'<text x="{x:.1f}" y="{y:.1f}" class="{cls}" font-size="{size}"{st}{an} fill="{fill or t["soft"]}"{extra}>{s}</text>')
+
+    def rule(y):
+        a(f'<line x1="56" y1="{y}" x2="864" y2="{y}" stroke="{t["rule"]}"/>')
+
+    # ---- figures ----------------------------------------------------------
     window = min(365, (today - start).days + 1)
     active = sum(1 for i in range(window) if days.get(today - timedelta(days=i), 0) > 0)
-    slo = 100 * active / window
+    this_year = sum(c for d, c in days.items() if d.year == today.year)
     peak_day = max(days.items(), key=lambda kv: (kv[1], kv[0]), default=(today, 0))
-    langs = sorted(metrics["languages"].items(), key=lambda kv: -kv[1][0])
-    lang_total = sum(size for _, (size, _) in langs) or 1
-
-    a(f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" font-family='{DASH_MONO}' role="img" aria-label="GitHub stats dashboard: current streak {stats["current"]} days, longest streak {stats["longest"]} days, {stats["total"]:,} total contributions, {slo:.1f}% of the last {window} days active.">
-<defs>
-  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="{t["bg0"]}"/><stop offset="1" stop-color="{t["bg1"]}"/></linearGradient>
-  <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="{t["purple"]}"/><stop offset=".35" stop-color="{t["blue"]}"/><stop offset=".7" stop-color="{t["green"]}"/><stop offset="1" stop-color="{t["orange"]}"/>
-    <animateTransform attributeName="gradientTransform" type="rotate" from="0 .5 .5" to="360 .5 .5" dur="10s" repeatCount="indefinite"/>
-  </linearGradient>
-  <pattern id="dots" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#ffffff" fill-opacity=".05"/></pattern>
-  <clipPath id="clip"><rect x="1" y="1" width="{W - 2}" height="{H - 2}" rx="16"/></clipPath>
-</defs>
-<style>
-  .in {{ opacity: 0; animation: in .6s cubic-bezier(.2,.8,.2,1) forwards; }}
-  .rise {{ transform-box: fill-box; transform-origin: bottom; transform: scaleY(0); animation: rise 1s cubic-bezier(.2,.8,.2,1) forwards; }}
-  .grow {{ transform-box: fill-box; transform-origin: left; transform: scaleX(0); animation: grow 1.2s cubic-bezier(.2,.8,.2,1) forwards; }}
-  .ring {{ stroke-dasharray: 100; stroke-dashoffset: 100; animation: ring 1.6s .4s ease-out forwards; }}
-  .pulse {{ transform-box: fill-box; transform-origin: center; animation: pulse 1.8s ease-in-out infinite; }}
-  @keyframes in {{ from {{ opacity: 0; transform: translateY(8px); }} to {{ opacity: 1; transform: none; }} }}
-  @keyframes rise {{ to {{ transform: scaleY(1); }} }}
-  @keyframes grow {{ to {{ transform: scaleX(1); }} }}
-  @keyframes ring {{ to {{ stroke-dashoffset: {100 - slo:.1f}; }} }}
-  @keyframes pulse {{ 0%,100% {{ transform: scale(1); opacity: 1; }} 50% {{ transform: scale(1.8); opacity: .3; }} }}
-  @media (prefers-reduced-motion: reduce) {{
-    .in {{ animation: none; opacity: 1; }}
-    .grow, .rise {{ animation: none; transform: none; }}
-    .ring {{ animation: none; stroke-dashoffset: {100 - slo:.1f}; }}
-    .pulse {{ animation: none; }}
-  }}
-</style>
-<g clip-path="url(#clip)">
-<rect width="{W}" height="{H}" fill="url(#bg)"/><rect width="{W}" height="{H}" fill="url(#dots)"/>''')
-
-    # --- header ------------------------------------------------------------
-    a(f'''<g class="in">
-<text x="24" y="42" font-size="19" font-weight="700" fill="{t["fg"]}" letter-spacing=".04em">YD-PLATFORM<tspan fill="{t["purple"]}"> / </tspan>observability</text>
-<text x="24" y="62" font-size="11" fill="{t["muted"]}">github.com/{escape(login)} · public + private · refreshed every 6h</text>
-<circle class="pulse" cx="{W - 150}" cy="38" r="4" fill="{t["green"]}"/>
-<text x="{W - 140}" y="42" font-size="11" fill="{t["green"]}">live</text>
-<text x="{W - 24}" y="42" font-size="11" fill="{t["dim"]}" text-anchor="end">{today.strftime("%b %-d, %Y")}</text>
-</g>''')
-
-    # --- stat tiles ----------------------------------------------------------
-    ty, th, gap = 80, 92, 14
-    tw = (W - 48 - 3 * gap) / 4
-    cur_since = f"since {fmt_date(stats['current_range'][0], today)}" if stats["current"] else "next commit starts it"
-    tiles = [
-        ("uptime", plural(stats["current"], "day"), cur_since, t["green"]),
-        ("longest uptime", plural(stats["longest"], "day"), fmt_range(stats["longest_range"], today), t["orange"]),
-        ("requests served", f"{stats['total']:,}", f"contributions since {start.year}", t["blue"]),
-        (f"slo · {window}d", f"{slo:.1f}%", f"{active}/{window} days active", t["purple"]),
-    ]
-    for i, (title, value, sub, col) in enumerate(tiles):
-        x = 24 + i * (tw + gap)
-        panel(x, ty, tw, th, title, delay=0.1 + i * 0.08, accent=col)
-        a(f'<text x="{x + 16}" y="{ty + 58}" font-size="24" font-weight="700" fill="{t["fg"]}">{escape(value)}</text>')
-        a(f'<text x="{x + 16}" y="{ty + 78}" font-size="10" fill="{t["muted"]}">{escape(sub)}</text>')
-        if i == 0 and stats["current"]:
-            a(f'<circle class="pulse" cx="{x + tw - 22}" cy="{ty + 50}" r="5" fill="{col}"/>')
-        if i == 3:
-            rx, ry = x + tw - 34, ty + 52
-            a(f'<circle cx="{rx}" cy="{ry}" r="17" fill="none" stroke="#ffffff" stroke-opacity=".08" stroke-width="5"/>')
-            a(f'<circle class="ring" cx="{rx}" cy="{ry}" r="17" fill="none" stroke="{col}" stroke-width="5" stroke-linecap="round" pathLength="100" transform="rotate(-90 {rx} {ry})"/>')
-        a('</g>')
-
-    # --- load by weekday ---------------------------------------------------
-    cy0, ch = ty + th + gap, 176
-    cw = 548
-    names = ("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")
     per_dow = [0] * 7
     for i in range(window):
         d = today - timedelta(days=i)
         per_dow[d.weekday()] += days.get(d, 0)
     busiest = max(range(7), key=lambda i: per_dow[i])
-    panel(24, cy0, cw, ch, f"load by weekday · {window}d", f"busiest: {names[busiest]}", 0.4, t["purple"])
-    bars(24, cy0, cw, ch, names, per_dow, busiest, 0.6)
-    a('</g>')
-
-    # --- languages -----------------------------------------------------------
-    lx0 = 24 + cw + gap
-    lw = W - 24 - lx0
-    panel(lx0, cy0, lw, ch, "traffic by language", "by bytes", 0.5, t["blue"])
-    top = langs[:6]
-    for i, (name, (size, color)) in enumerate(top):
-        y = cy0 + 48 + i * 21
-        pct = 100 * size / lang_total
-        bar_x, bar_w = lx0 + 112, lw - 112 - 58
-        a(f'<circle cx="{lx0 + 20}" cy="{y - 3.5}" r="4" fill="{color or t["dim"]}"/>')
-        a(f'<text x="{lx0 + 30}" y="{y}" font-size="10.5" fill="{t["fg"]}">{escape(name[:11])}</text>')
-        a(f'<rect x="{bar_x}" y="{y - 7}" width="{bar_w}" height="6" rx="3" fill="#ffffff" fill-opacity=".06"/>')
-        a(f'<rect class="grow" style="animation-delay:{0.7 + i * 0.1:.2f}s" x="{bar_x}" y="{y - 7}" width="{max(bar_w * pct / 100, 2):.1f}" height="6" rx="3" fill="{color or t["dim"]}"/>')
-        a(f'<text x="{lx0 + lw - 16}" y="{y}" font-size="10" fill="{t["dim"]}" text-anchor="end">{pct:.1f}%</text>')
-    a('</g>')
-
-    # --- releases per year -------------------------------------------------
-    hy0, hh = cy0 + ch + gap, H - 24 - (cy0 + ch + gap)
-    years = list(range(start.year, today.year + 1))[-7:]
+    weekend_share = (per_dow[5] + per_dow[6]) / (sum(per_dow) or 1)
+    years = list(range(start.year, today.year + 1))[-6:]
     per_year = [sum(c for d, c in days.items() if d.year == y) for y in years]
-    best = max(range(len(years)), key=lambda i: per_year[i])
-    labels = [f"{y} YTD" if y == today.year else str(y) for y in years]
-    panel(24, hy0, cw, hh, "releases · contributions per year", f"best: {years[best]} · {per_year[best]:,}", 0.6, t["green"])
-    bars(24, hy0, cw, hh, labels, per_year, best, 0.8)
-    a('</g>')
+    best_year = max(range(len(years)), key=lambda i: per_year[i])
+    langs = sorted(metrics["languages"].items(), key=lambda kv: -kv[1][0])[:5]
+    lang_total = sum(size for _, (size, _) in sorted(metrics["languages"].items())) or 1
 
-    # --- counters ------------------------------------------------------------
-    panel(lx0, hy0, lw, hh, "counters", "", 0.7, t["orange"])
-    counters = [
-        ("deploys", short_number(metrics["pull_requests"]), "pull requests", t["green"]),
-        ("tickets", short_number(metrics["issues"]), "issues", t["yellow"]),
-        ("services", short_number(metrics["repositories"]), "repositories", t["blue"]),
-        ("stars", short_number(metrics["stars"]), "earned", t["yellow"]),
-        ("followers", short_number(metrics["followers"]), "humans", t["purple"]),
-        ("peak day", short_number(peak_day[1]), fmt_date(peak_day[0], today), t["red"]),
+    a(f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" '
+      f'aria-label="GitHub in numbers: {stats["total"]:,} contributions since {start.year}, {this_year:,} this year. '
+      f'Current streak {stats["current"]} days, longest {stats["longest"]} days, active on {active} of the last {window} days, '
+      f'{metrics["pull_requests"]:,} pull requests.">')
+    a(f'<style>.s{{font-family:{PAPER_SERIF}}} .k{{font-family:{PAPER_SANS}}}'
+      '.g{transform-box:fill-box;transform-origin:bottom;animation:g 1.1s cubic-bezier(.2,.8,.2,1) both}'
+      '.w{transform-box:fill-box;transform-origin:left;animation:w 1.2s cubic-bezier(.2,.8,.2,1) both}'
+      '@keyframes g{from{transform:scaleY(0)}} @keyframes w{from{transform:scaleX(0)}}'
+      '@media (prefers-reduced-motion:reduce){.g,.w{animation:none}}</style>')
+    a(f'<rect width="{W}" height="{H}" rx="10" fill="{t["bg"]}"/>')
+
+    # ---- masthead + headline ---------------------------------------------
+    text(56, 62, "GITHUB, IN NUMBERS", 11, t["muted"], cls="k", extra=' letter-spacing="2.4"')
+    text(864, 62, f"public + private · updated {today.strftime('%b %-d, %Y')}", 13, t["muted"], True, "end")
+    rule(78)
+    text(56, 132, f"{stats['total']:,} contributions since {start.year},", 34, t["ink"], extra=' letter-spacing="-0.3"')
+    text(56, 170, f"{this_year:,} of them this year.", 26, t["accent"], True)
+
+    # ---- four figures ------------------------------------------------------
+    cur_from = _date(stats["current_range"][0], today) if stats["current"] else None
+    lo, hi = stats["longest_range"]
+    same_run = stats["current"] and stats["current"] == stats["longest"]
+    figures = [
+        (str(stats["current"]), "days", "current streak",
+         f"since {cur_from}" if cur_from else "starts with the next commit"),
+        (str(stats["longest"]), "days", "longest streak",
+         "and it’s this one" if same_run else (f"{_date(lo, today)} – {_date(hi, today)}" if lo else "")),
+        (str(active), f"/ {window}", "days I showed up", "over the last year"),
+        (_short(metrics["pull_requests"]), "", "pull requests",
+         f"across {metrics['repositories']} repositories"),
     ]
-    colw, rowh = (lw - 32) / 3, (hh - 44) / 2
-    for i, (label, value, sub, col) in enumerate(counters):
-        x = lx0 + 16 + (i % 3) * colw
-        y = hy0 + 40 + (i // 3) * rowh
-        a(f'<text x="{x}" y="{y + 8}" font-size="9.5" fill="{t["muted"]}" letter-spacing=".06em">{escape(label.upper())}</text>')
-        a(f'<text x="{x}" y="{y + 30}" font-size="18" font-weight="700" fill="{col}">{escape(value)}</text>')
-        a(f'<text x="{x}" y="{y + 44}" font-size="9" fill="{t["muted"]}">{escape(sub)}</text>')
-    a('</g>')
+    for i, (big, unit, cap, sub) in enumerate(figures):
+        x = 56 + i * 206
+        unit_t = f'<tspan font-size="17" fill="{t["muted"]}" dx="6">{unit}</tspan>' if unit else ""
+        text(x, 248, f"{escape(big)}{unit_t}", 40, t["ink"])
+        text(x, 274, escape(cap), 15, t["soft"])
+        text(x, 294, escape(sub), 14, t["muted"], True)
+    rule(326)
 
-    a('</g>')
-    a(f'<rect x="1" y="1" width="{W - 2}" height="{H - 2}" rx="16" fill="none" stroke="url(#edge)" stroke-width="1.6"/>')
-    a('</svg>')
-    return "\n".join(out) + "\n"
+    # ---- when I work (weekday bars) ---------------------------------------
+    text(56, 362, "When I work", 15, t["accent"], True)
+    base, tall, bw, gap = 486, 92, 30, 22
+    vmax = max(per_dow) or 1
+    for i, v in enumerate(per_dow):
+        x = 56 + i * (bw + gap)
+        h = max(tall * v / vmax, 2)
+        col = t["accent"] if i == busiest else t["bar"]
+        a(f'<rect class="g" style="animation-delay:{.1 + i * .06:.2f}s" x="{x}" y="{base - h:.1f}" width="{bw}" '
+          f'height="{h:.1f}" rx="2" fill="{col}"><title>{DAY_NAMES[i]}: {v:,}</title></rect>')
+        text(x + bw / 2, base + 20, DAY_NAMES[i][:3], 13, t["ink"] if i == busiest else t["muted"], anchor="middle")
+    note = f"Busiest on {DAY_NAMES[busiest]}s."
+    if weekend_share < 0.2:
+        note += " Weekends stay fairly quiet."
+    text(56, 540, note, 14, t["muted"], True)
+
+    # ---- what I write (languages) -----------------------------------------
+    lx, lw = 500, 364
+    text(lx, 362, "What I write", 15, t["accent"], True)
+    x = lx
+    shades = [1, .55, .4, .28, .18]
+    for i, (name, (size, _)) in enumerate(langs):
+        w = lw * size / lang_total
+        col = t["accent"] if i == 0 else t["ink"]
+        op = 1 if i == 0 else shades[i]
+        a(f'<rect class="w" style="animation-delay:{.2 + i * .08:.2f}s" x="{x:.1f}" y="378" width="{max(w - 2, 1):.1f}" '
+          f'height="8" rx="1.5" fill="{col}" fill-opacity="{op}"><title>{escape(name)}</title></rect>')
+        x += w
+    for i, (name, (size, _)) in enumerate(langs):
+        col_x = lx + (i % 3) * 124
+        y = 414 + (i // 3) * 24
+        text(col_x, y, f'{escape(name[:12])} <tspan fill="{t["muted"]}" font-style="italic">'
+             f'{100 * size / lang_total:.0f}%</tspan>', 14, t["soft"])
+
+    # ---- year by year -------------------------------------------------------
+    text(lx, 484, "Year by year", 15, t["accent"], True)
+    step = lw / len(years)
+    for i, (y, v) in enumerate(zip(years, per_year)):
+        cx = lx + i * step
+        best = i == best_year
+        label = f"{y}" + (" so far" if y == today.year else "")
+        text(cx, 512, _short(v) if v else "–", 17 if best else 15, t["ink"] if best else (t["soft"] if v else t["muted"]))
+        text(cx, 532, label if best else str(y), 12, t["accent"] if best else t["muted"], best)
+
+    # ---- footer -------------------------------------------------------------
+    rule(560)
+    text(56, 584, f"busiest single day: {peak_day[1]} contributions on {_date(peak_day[0], today)}", 13, t["muted"], True)
+    stars = metrics["stars"]
+    star_txt = "no stars yet" if not stars else f"{stars:,} star{'s' if stars != 1 else ''}"
+    text(864, 584, f"{metrics['repositories']} repositories · {metrics['followers']} followers · {star_txt}",
+         13, t["muted"], True, "end")
+    a("</svg>")
+    return "\n".join(o) + "\n"
 
 
 def main():
@@ -778,8 +754,9 @@ def main():
     metrics["longest_streak"] = stats["longest"]
     with open(os.path.join(out_dir, "trophies.svg"), "w") as f:
         f.write(render_trophies_svg(metrics))
-    with open(os.path.join(out_dir, "dashboard.svg"), "w") as f:
-        f.write(render_dashboard_svg(login, days, today, start, stats, metrics))
+    for theme, name in (("light", "dashboard.svg"), ("dark", "dashboard-dark.svg")):
+        with open(os.path.join(out_dir, name), "w") as f:
+            f.write(render_dashboard_svg(login, days, today, start, stats, metrics, theme))
     print(f"total={stats['total']} current={stats['current']} longest={stats['longest']}")
     print(f"trophies={ {k: v for k, v in metrics.items() if k != 'languages'} }")
 
