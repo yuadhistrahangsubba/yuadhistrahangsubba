@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="660" viewBox="0 0 920 660" role="img" aria-label="About Yuadhistra Hang Subba (Y.D), backend developer from Bhutan">
+<style>.s{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif} .k{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif}.f{transform-box:fill-box;transform-origin:top center;animation:f 3.2s ease-in-out infinite alternate}@keyframes f{from{transform:skewX(-4deg)}to{transform:skewX(5deg)}}@media (prefers-reduced-motion:reduce){.f{animation:none}}</style>
+<rect width="920" height="660" rx="10" fill="#15130f"/>
+<text x="56" y="62" class="k" font-size="11" letter-spacing="2.4" fill="#8d8578">ABOUT ME</text>
+<text x="864" y="62" class="s" font-size="13" font-style="italic" fill="#8d8578" text-anchor="end">Bhutan · 27.5° N, 90.4° E</text>
+<line x1="56" y1="78" x2="864" y2="78" stroke="#2e2a23"/>
+<text x="56" y="138" class="s" font-size="42" fill="#efe9de" letter-spacing="-0.5">Hi, I’m Yuadhistra.</text>
+<text x="56" y="174" class="s" font-size="22" font-style="italic" fill="#8d8578">Most people just call me Y.D.</text>
+<text x="56" y="222" class="s" font-size="17" fill="#cfc6b8">I’m a backend developer from Bhutan. I like the quiet</text>
+<text x="56" y="249" class="s" font-size="17" fill="#cfc6b8">parts of software: schemas that age well, queues that</text>
+<text x="56" y="276" class="s" font-size="17" fill="#cfc6b8">don’t drop messages, APIs nobody has to think twice</text>
+<text x="56" y="303" class="s" font-size="17" fill="#cfc6b8">about. These days that’s NestJS, PostgreSQL and a fair</text>
+<text x="56" y="330" class="s" font-size="17" fill="#cfc6b8">amount of event-driven plumbing.</text>
+<g>
+<circle cx="790" cy="140" r="20" fill="none" stroke="#e0b04a" stroke-width="1.5"/>
+<path d="M560,300 L612,238 L640,262 L700,170 L736,214 L760,196 L820,262 L864,232 L880,248" fill="none" stroke="#3a352d" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M560,320 L600,284 L628,300 L676,226 L700,246 L724,224 L780,292 L812,276 L880,318" fill="none" stroke="#efe9de" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M668,238 L676,226 L684,236 M716,234 L724,224 L732,234" fill="none" stroke="#efe9de" stroke-width="1.2"/>
+<path d="M676,226 Q735,282 780,292" fill="none" stroke="#8d8578" stroke-width=".8"/>
+<rect class="f" x="684.2" y="236.7" width="7" height="9" fill="#3d6fb6" opacity=".9" style="animation-delay:0.00s"/>
+<rect class="f" x="695.5" y="246.6" width="7" height="9" fill="#e8e2d4" opacity=".9" style="animation-delay:0.18s"/>
+<rect class="f" x="706.6" y="255.5" width="7" height="9" fill="#c4452f" opacity=".9" style="animation-delay:0.36s"/>
+<rect class="f" x="717.5" y="263.4" width="7" height="9" fill="#4d8a4f" opacity=".9" style="animation-delay:0.54s"/>
+<rect class="f" x="728.0" y="270.5" width="7" height="9" fill="#d49a2a" opacity=".9" style="animation-delay:0.72s"/>
+<rect class="f" x="738.3" y="276.6" width="7" height="9" fill="#3d6fb6" opacity=".9" style="animation-delay:0.90s"/>
+<rect class="f" x="748.2" y="281.9" width="7" height="9" fill="#e8e2d4" opacity=".9" style="animation-delay:1.08s"/>
+<rect class="f" x="757.9" y="286.2" width="7" height="9" fill="#c4452f" opacity=".9" style="animation-delay:1.26s"/>
+<rect class="f" x="767.4" y="289.5" width="7" height="9" fill="#4d8a4f" opacity=".9" style="animation-delay:1.44s"/>
+<text x="600" y="358" class="s" font-size="15" font-style="italic" fill="#e98a45">home, somewhere down there</text>
+<path d="M640,342 C636,330 632,322 622,312" fill="none" stroke="#e98a45" stroke-width="1.2" stroke-linecap="round"/>
+<path d="M622,312 L623,321 M622,312 L630,315" fill="none" stroke="#e98a45" stroke-width="1.2" stroke-linecap="round"/>
+</g>
+<line x1="56" y1="392" x2="864" y2="392" stroke="#2e2a23"/>
+<text x="56" y="424" class="s" font-size="15" font-style="italic" fill="#e98a45">Right now</text>
+<text x="56" y="452" class="s" font-size="15" fill="#8d8578">–</text>
+<text x="72" y="452" class="s" font-size="15" fill="#cfc6b8">Building services for EMIS,</text>
+<text x="72" y="472" class="s" font-size="15" fill="#cfc6b8">Bhutan’s education system</text>
+<text x="56" y="502" class="s" font-size="15" fill="#8d8578">–</text>
+<text x="72" y="502" class="s" font-size="15" fill="#cfc6b8">Learning Rust. The borrow</text>
+<text x="72" y="522" class="s" font-size="15" fill="#cfc6b8">checker is winning, for now</text>
+<text x="56" y="552" class="s" font-size="15" fill="#8d8578">–</text>
+<text x="72" y="552" class="s" font-size="15" fill="#cfc6b8">Getting CQRS and clean</text>
+<text x="72" y="572" class="s" font-size="15" fill="#cfc6b8">architecture right in practice</text>
+<text x="330" y="424" class="s" font-size="15" font-style="italic" fill="#e98a45">Off the keyboard</text>
+<text x="330" y="452" class="s" font-size="15" fill="#8d8578">–</text>
+<text x="346" y="452" class="s" font-size="15" fill="#cfc6b8">Trekking, and the higher</text>
+<text x="346" y="472" class="s" font-size="15" fill="#cfc6b8">the better</text>
+<text x="330" y="502" class="s" font-size="15" fill="#8d8578">–</text>
+<text x="346" y="502" class="s" font-size="15" fill="#cfc6b8">Football on weekends</text>
+<text x="330" y="532" class="s" font-size="15" fill="#8d8578">–</text>
+<text x="346" y="532" class="s" font-size="15" fill="#cfc6b8">Games, more often than</text>
+<text x="346" y="552" class="s" font-size="15" fill="#cfc6b8">I’d like to admit</text>
+<text x="604" y="424" class="s" font-size="15" font-style="italic" fill="#e98a45">What I reach for</text>
+<text x="604" y="452" class="s" font-size="15" fill="#8d8578">–</text>
+<text x="620" y="452" class="s" font-size="15" fill="#cfc6b8">NestJS, TypeScript, Node.js</text>
+<text x="604" y="482" class="s" font-size="15" fill="#8d8578">–</text>
+<text x="620" y="482" class="s" font-size="15" fill="#cfc6b8">PostgreSQL, MySQL, Redis</text>
+<text x="604" y="512" class="s" font-size="15" fill="#8d8578">–</text>
+<text x="620" y="512" class="s" font-size="15" fill="#cfc6b8">Docker, NATS, GitHub Actions</text>
+<line x1="56" y1="594" x2="864" y2="594" stroke="#2e2a23"/>
+<text x="864" y="626" class="s" font-size="15" font-style="italic" fill="#8d8578" text-anchor="end">code with purpose, build with precision.  <tspan fill="#efe9de" font-size="18">— Y.D</tspan></text>
+</svg>

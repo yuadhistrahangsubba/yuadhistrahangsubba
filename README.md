@@ -19,7 +19,11 @@
 ## 🧑‍💻 &nbsp;About Me
 
 <p align="center">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/about-me-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/about-me.svg" />
   <img src="./assets/about-me.svg" alt="Hi, I'm Yuadhistra. Most people just call me Y.D. I'm a backend developer from Bhutan. I like the quiet parts of software: schemas that age well, queues that don't drop messages, APIs nobody has to think twice about. Right now: building services for EMIS, learning Rust, getting CQRS and clean architecture right in practice. Off the keyboard: trekking, football on weekends, games. What I reach for: NestJS, TypeScript, Node.js, PostgreSQL, MySQL, Redis, Docker, NATS, GitHub Actions. Code with purpose, build with precision." width="100%"/>
+</picture>
 </p>
 
 <br/>
