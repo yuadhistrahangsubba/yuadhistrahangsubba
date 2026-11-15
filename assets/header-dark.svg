@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="260" viewBox="0 0 920 260" role="img" aria-label="Yuadhistra Hang Subba, backend developer in Bhutan. Building backend systems that stay quiet, steady and easy to change.">
+<style>.s{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif} .k{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif}.f{transform-box:fill-box;transform-origin:top center;animation:f 3.2s ease-in-out infinite alternate}@keyframes f{from{transform:skewX(-4deg)}to{transform:skewX(5deg)}}@media (prefers-reduced-motion:reduce){.f{animation:none}}</style>
+<rect width="920" height="260" rx="10" fill="#15130f"/>
+<text x="56" y="52" class="k" font-size="11" letter-spacing="2.4" fill="#8d8578">BACKEND DEVELOPER · BHUTAN</text>
+<text x="864" y="52" class="s" font-size="13" font-style="italic" fill="#8d8578" text-anchor="end">on GitHub since 2021</text>
+<line x1="56" y1="68" x2="864" y2="68" stroke="#2e2a23"/>
+<text x="460.0" y="140" class="s" font-size="56" fill="#efe9de" text-anchor="middle" letter-spacing="-0.6">Yuadhistra Hang Subba</text>
+<text x="460.0" y="180" class="s" font-size="20" font-style="italic" fill="#e98a45" text-anchor="middle">building backend systems that stay quiet, steady and easy to change</text>
+<path d="M56,232 L385,232 L415,214 L437,224 L473,198 L495,212 L517,202 L555,232 L864,232" fill="none" stroke="#efe9de" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M461,206 L473,198 L485,206" fill="none" stroke="#efe9de" stroke-width="1"/>
+<path d="M473,198 Q499,216 517,202" fill="none" stroke="#8d8578" stroke-width=".7"/>
+<rect class="f" x="478.9" y="203.1" width="5" height="7" fill="#3d6fb6" style="animation-delay:0.0s"/>
+<rect class="f" x="486.9" y="206.4" width="5" height="7" fill="#e8e2d4" style="animation-delay:0.2s"/>
+<rect class="f" x="494.5" y="208.0" width="5" height="7" fill="#c4452f" style="animation-delay:0.4s"/>
+<rect class="f" x="501.6" y="207.8" width="5" height="7" fill="#4d8a4f" style="animation-delay:0.6s"/>
+<rect class="f" x="508.3" y="205.8" width="5" height="7" fill="#d49a2a" style="animation-delay:0.8s"/>
+<circle cx="604" cy="206" r="9" fill="none" stroke="#e0b04a" stroke-width="1.3"/>
+</svg>
