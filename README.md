@@ -64,7 +64,11 @@
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/yuadhistrahangsubba/yuadhistrahangsubba/output/activity-graph.svg" alt="Contribution activity graph (public + private)" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/yuadhistrahangsubba/yuadhistrahangsubba/output/activity-graph-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/yuadhistrahangsubba/yuadhistrahangsubba/output/activity-graph.svg" />
+  <img src="https://raw.githubusercontent.com/yuadhistrahangsubba/yuadhistrahangsubba/output/activity-graph.svg" alt="Contribution activity over the last 31 days (public + private): total contributions, days active, the busiest day and the daily average, with weekends shaded. Refreshed every 6 hours." width="100%" />
+</picture>
 
 </div>
 

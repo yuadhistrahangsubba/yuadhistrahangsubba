@@ -6,7 +6,7 @@ This script merges the calendar with commits the token can read in private
 repositories (personal and organization), on every branch, counted per day in
 PROFILE_TZ (default UTC).
 
-Writes streak-stats.svg, activity-graph.svg, trophies.svg (achievement skill tree), dashboard.svg and dashboard-dark.svg into <output_dir>.
+Writes streak-stats.svg, activity-graph.svg, activity-graph-dark.svg, trophies.svg (achievement skill tree), dashboard.svg and dashboard-dark.svg into <output_dir>.
 
 Usage: GH_TOKEN=... python profile_stats.py <username> <output_dir>
 """
@@ -328,76 +328,127 @@ def render_svg(stats, today):
 """
 
 
-ACTIVITY_THEME = {
-    "background": "#0D1117",
-    "text": "#00FFC0",
-    "line": "#FF00FF",
-    "point": "#00FFC0",
-    "area": "#FF00FF",
-    "grid": "#21262D",
+ACT_PAPER = {
+    "light": dict(bg="#fbf8f2", ink="#1f1c18", soft="#4a443c", muted="#8a8174",
+                  rule="#e4ddd0", band="#f3eee4", area="#c0561b", accent="#c0561b"),
+    "dark":  dict(bg="#15130f", ink="#efe9de", soft="#cfc6b8", muted="#8d8578",
+                  rule="#2e2a23", band="#211d17", area="#e98a45", accent="#e98a45"),
 }
+ACT_SERIF = "'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif"
+ACT_SANS = "-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
 
 
-def nice_step(peak, ticks=5):
-    """Smallest 1/2/5 x 10^n step that covers peak in about `ticks` gridlines."""
-    raw = max(peak, 1) / ticks
-    magnitude = 10 ** (len(str(int(raw))) - 1)
-    for mult in (1, 2, 5, 10):
-        if mult * magnitude >= raw:
-            return mult * magnitude
-    return 10 * magnitude
-
-
-def render_activity_svg(days, today, title, span=31):
-    t = ACTIVITY_THEME
-    width, height = 1000, 360
-    left, right, top, bottom = 70, 30, 70, 60
-    plot_w, plot_h = width - left - right, height - top - bottom
-
+def render_activity_svg(days, today, title, span=31, theme="light"):
+    """The last `span` days as a calm line chart: weekends shaded, the busiest day
+    labelled, and a one-line summary on top. theme is "light" or "dark"."""
+    t = ACT_PAPER[theme]
+    W, H = 920, 400
+    left, right, top, bottom = 56, 864, 150, 330
     dates = [today - timedelta(days=span - 1 - i) for i in range(span)]
     counts = [days.get(d, 0) for d in dates]
-    step = nice_step(max(counts))
-    y_max = step * max(1, -(-max(counts) // step))
+    total, active = sum(counts), sum(1 for c in counts if c)
+    peak_i = max(range(span), key=lambda i: (counts[i], i))
+    peak = counts[peak_i]
+    y_max = max(peak, 1) * 1.15
+    slot = (right - left) / (span - 1)
 
     def x(i):
-        return left + plot_w * i / (span - 1)
+        return left + slot * i
 
     def y(v):
-        return top + plot_h * (1 - v / y_max)
+        return bottom - (bottom - top) * v / y_max
 
-    points = [(x(i), y(c)) for i, c in enumerate(counts)]
-    line = " ".join(f"{px:.1f},{py:.1f}" for px, py in points)
-    area = f"{left},{top + plot_h} {line} {left + plot_w},{top + plot_h}"
+    o = []
+    a = o.append
 
-    grid = []
-    for v in range(0, y_max + 1, step):
+    def text(xx, yy, s, size=15, fill=None, italic=False, anchor="start", cls="s", extra=""):
+        st = ' font-style="italic"' if italic else ""
+        an = f' text-anchor="{anchor}"' if anchor != "start" else ""
+        a(f'<text x="{xx:.1f}" y="{yy:.1f}" class="{cls}" font-size="{size}"{st}{an} fill="{fill or t["soft"]}"{extra}>{s}</text>')
+
+    period = f"{dates[0].strftime('%b %-d')} – {dates[-1].strftime('%b %-d, %Y')}"
+    a(f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" '
+      f'aria-label="{escape(title)}: {total:,} contributions from {period}, active on {active} of {span} days, '
+      f'busiest on {dates[peak_i].strftime("%b %-d")} with {peak}.">')
+    a(f'<style>.s{{font-family:{ACT_SERIF}}} .k{{font-family:{ACT_SANS}}}'
+      '.ln{stroke-dasharray:1;stroke-dashoffset:1;animation:ln 2.2s cubic-bezier(.3,.7,.2,1) .2s forwards}'
+      '.ar{opacity:0;animation:ar 1s ease 1.4s forwards}'
+      '@keyframes ln{to{stroke-dashoffset:0}} @keyframes ar{to{opacity:1}}'
+      '@media (prefers-reduced-motion:reduce){.ln{animation:none;stroke-dashoffset:0}.ar{animation:none;opacity:1}}</style>')
+    a(f'<rect width="{W}" height="{H}" rx="10" fill="{t["bg"]}"/>')
+
+    # masthead + summary sentence
+    text(56, 52, "CONTRIBUTION ACTIVITY", 11, t["muted"], cls="k", extra=' letter-spacing="2.4"')
+    text(864, 52, f"the last {span} days · {period}", 13, t["muted"], True, "end")
+    a(f'<line x1="56" y1="68" x2="864" y2="68" stroke="{t["rule"]}"/>')
+    tail = "and I showed up for every one of them." if active == span else f"active on {active} of them."
+    text(56, 108, f'{total:,} contributions in {span} days, <tspan font-size="22" font-style="italic" '
+         f'fill="{t["accent"]}">{tail}</tspan>', 28, t["ink"])
+
+    # weekend bands
+    for i, d in enumerate(dates):
+        if d.weekday() >= 5:
+            bx = max(x(i) - slot / 2, left)
+            bw = min(x(i) + slot / 2, right) - bx
+            a(f'<rect x="{bx:.1f}" y="{top - 10}" width="{bw:.1f}" height="{bottom - top + 10}" fill="{t["band"]}"/>')
+
+    # quiet gridlines: zero, half and peak-ish
+    for frac in (0, .5, 1):
+        v = round(y_max / 1.15 * frac)
         gy = y(v)
-        grid.append(f'<line x1="{left}" y1="{gy:.1f}" x2="{left + plot_w}" y2="{gy:.1f}" stroke="{t["grid"]}"/>')
-        grid.append(f'<text x="{left - 12}" y="{gy + 4:.1f}" text-anchor="end">{v}</text>')
-    labels = [
-        f'<text x="{x(i):.1f}" y="{top + plot_h + 22}" text-anchor="middle">{d.day}</text>'
-        for i, d in enumerate(dates)
-    ]
-    dots = [
-        f'<circle cx="{px:.1f}" cy="{py:.1f}" r="4" fill="{t["point"]}"><title>{dates[i].isoformat()}: {counts[i]}</title></circle>'
-        for i, (px, py) in enumerate(points)
-    ]
-    period = f"{dates[0].strftime('%b %-d')} - {dates[-1].strftime('%b %-d, %Y')}"
-    nl = "\n    "
-    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">
-  <rect width="{width}" height="{height}" rx="6" fill="{t['background']}"/>
-  <g font-family="'Segoe UI', Ubuntu, sans-serif" fill="{t['text']}" font-size="12">
-    <text x="{width / 2}" y="38" text-anchor="middle" font-size="22" font-weight="700">{escape(title)}</text>
-    {nl.join(grid)}
-    {nl.join(labels)}
-    <text x="{left + plot_w / 2}" y="{height - 14}" text-anchor="middle" font-size="13">{escape(period)}</text>
-    <text transform="translate(20 {top + plot_h / 2}) rotate(-90)" text-anchor="middle" font-size="13">Contributions</text>
-  </g>
-  <polygon points="{area}" fill="{t['area']}" fill-opacity="0.15"/>
-  <polyline points="{line}" fill="none" stroke="{t['line']}" stroke-width="2.5" stroke-linejoin="round"/>
-  {nl.join(dots)}
-</svg>
-"""
+        dash = "" if frac == 0 else ' stroke-dasharray="1 4"'
+        a(f'<line x1="{left}" y1="{gy:.1f}" x2="{right}" y2="{gy:.1f}" stroke="{t["rule"]}"{dash}/>')
+        if frac:
+            text(right, gy - 6, str(v), 11, t["muted"], anchor="end")
+
+    # area + line: monotone cubic, so the curve never overshoots the real daily values
+    pts = [(x(i), y(c)) for i, c in enumerate(counts)]
+    n = len(pts)
+    sec = [(pts[i + 1][1] - pts[i][1]) / slot for i in range(n - 1)]
+    tan = [sec[0]] + [0 if sec[i - 1] * sec[i] <= 0 else (sec[i - 1] + sec[i]) / 2 for i in range(1, n - 1)] + [sec[-1]]
+    for i in range(n - 1):
+        if sec[i] == 0:
+            tan[i] = tan[i + 1] = 0
+            continue
+        al, be = tan[i] / sec[i], tan[i + 1] / sec[i]
+        h = al * al + be * be
+        if h > 9:
+            k = 3 / h ** .5
+            tan[i], tan[i + 1] = k * al * sec[i], k * be * sec[i]
+    d = f"M{pts[0][0]:.1f},{pts[0][1]:.1f}"
+    for i in range(n - 1):
+        (x0, y0), (x1, y1) = pts[i], pts[i + 1]
+        d += (f" C{x0 + slot / 3:.1f},{y0 + tan[i] * slot / 3:.1f} "
+              f"{x1 - slot / 3:.1f},{y1 - tan[i + 1] * slot / 3:.1f} {x1:.1f},{y1:.1f}")
+    a(f'<path class="ar" d="{d} L{right},{bottom} L{left},{bottom} Z" fill="{t["area"]}" fill-opacity=".10"/>')
+    a(f'<path class="ln" pathLength="1" d="{d}" fill="none" stroke="{t["ink"]}" stroke-width="1.8" '
+      'stroke-linejoin="round" stroke-linecap="round"/>')
+    for i, (px, py) in enumerate(pts):  # invisible hover targets
+        a(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="7" fill="transparent"><title>{dates[i].strftime("%a %b %-d")}: {counts[i]}</title></circle>')
+
+    # busiest day callout
+    px, py = pts[peak_i]
+    a(f'<g class="ar"><circle cx="{px:.1f}" cy="{py:.1f}" r="4.5" fill="{t["accent"]}"/>')
+    lx = px - 14 if px > 640 else px + 14
+    anchor = "end" if px > 640 else "start"
+    text(lx, py - 2, f"{dates[peak_i].strftime('%b %-d')}, the busiest day: {peak}", 14, t["accent"], True, anchor)
+    a('</g>')
+
+    # x labels: every Monday, plus first and last day
+    for i, d in enumerate(dates):
+        if d.weekday() == 0 or i in (0, span - 1):
+            if i not in (0, span - 1) and (i < 4 or i > span - 4):
+                continue
+            anchor = "start" if i == 0 else "end" if i == span - 1 else "middle"
+            text(x(i), bottom + 22, d.strftime("%b %-d"), 12, t["muted"], anchor=anchor)
+
+    # footer
+    a(f'<line x1="56" y1="{H - 42}" x2="864" y2="{H - 42}" stroke="{t["rule"]}"/>')
+    text(56, H - 18, f"about {total / span:.1f} a day on average", 13, t["muted"], True)
+    a(f'<rect x="{right - 150}" y="{H - 30}" width="12" height="12" fill="{t["band"]}" stroke="{t["rule"]}"/>')
+    text(right, H - 19, "weekends are shaded", 13, t["muted"], True, "end")
+    a("</svg>")
+    return "\n".join(o) + "\n"
 
 
 # Achievement tiers: name, colour, gamerscore points for reaching it.
@@ -745,9 +796,10 @@ def main():
     os.makedirs(out_dir, exist_ok=True)
     with open(os.path.join(out_dir, "streak-stats.svg"), "w") as f:
         f.write(render_svg(stats, today))
-    with open(os.path.join(out_dir, "activity-graph.svg"), "w") as f:
-        title = os.environ.get("ACTIVITY_TITLE", f"{login}'s Contribution Activity")
-        f.write(render_activity_svg(days, today, title))
+    title = os.environ.get("ACTIVITY_TITLE", f"{login}'s Contribution Activity")
+    for theme, name in (("light", "activity-graph.svg"), ("dark", "activity-graph-dark.svg")):
+        with open(os.path.join(out_dir, name), "w") as f:
+            f.write(render_activity_svg(days, today, title, theme=theme))
     metrics = fetch_profile(token, login)
     metrics["commits"] = public_commits + sum(private.values())
     metrics["years"] = round((today - start).days / 365.25, 1)
