@@ -1,14 +1,16 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,40:00FFC0,100:FF00FF&height=220&section=header&text=Yuadhistra%20Hang%20Subba&fontSize=46&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Backend%20Developer%20%E2%80%A2%20System%20Architect%20%E2%80%A2%20Problem%20Solver&descAlignY=56&descSize=16&descColor=cccccc" />
-
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=18&duration=2800&pause=900&color=00FFC0&center=true&vCenter=true&repeat=true&width=620&height=52&lines=Building+scalable+backend+systems+%F0%9F%9A%80;NestJS+%E2%80%A2+TypeORM+%E2%80%A2+PostgreSQL+%E2%80%A2+Redis;Microservices+%E2%80%A2+Clean+Architecture+%E2%80%A2+CQRS;Exploring+Rust+for+systems+programming+%F0%9F%A6%80" alt="Typing SVG" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/header-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/header.svg" />
+  <img src="./assets/header.svg" alt="Yuadhistra Hang Subba, backend developer in Bhutan, on GitHub since 2021. Building backend systems that stay quiet, steady and easy to change." width="100%" />
+</picture>
 
 <br/>
 
-![Profile Views](https://komarev.com/ghpvc/?username=yuadhistrahangsubba&style=for-the-badge&color=00FFC0&label=PROFILE+VIEWS&labelColor=0D1117)
+![Profile views](https://komarev.com/ghpvc/?username=yuadhistrahangsubba&style=flat-square&color=c0561b&labelColor=3a352d&label=profile+views)
 &nbsp;
-![Followers](https://img.shields.io/github/followers/yuadhistrahangsubba?style=for-the-badge&color=FF00FF&labelColor=0D1117&label=FOLLOWERS)
+![Followers](https://img.shields.io/github/followers/yuadhistrahangsubba?style=flat-square&color=c0561b&labelColor=3a352d&label=followers)
 
 </div>
 
