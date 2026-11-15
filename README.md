@@ -19,7 +19,11 @@
 ## 🧑‍💻 &nbsp;About Me
 
 <p align="center">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/about-me-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/about-me.svg" />
   <img src="./assets/about-me.svg" alt="Hi, I'm Yuadhistra. Most people just call me Y.D. I'm a backend developer from Bhutan. I like the quiet parts of software: schemas that age well, queues that don't drop messages, APIs nobody has to think twice about. Right now: building services for EMIS, learning Rust, getting CQRS and clean architecture right in practice. Off the keyboard: trekking, football on weekends, games. What I reach for: NestJS, TypeScript, Node.js, PostgreSQL, MySQL, Redis, Docker, NATS, GitHub Actions. Code with purpose, build with precision." width="100%"/>
+</picture>
 </p>
 
 <br/>
@@ -29,7 +33,11 @@
 ## 🚀 &nbsp;Tech Stack
 
 <p align="center">
-  <img src="./assets/tech-stack.svg" alt="Tech stack. Core: NestJS, Node.js, TypeScript, JavaScript. Data: PostgreSQL, MySQL, Redis. Learning: Rust. Frontend (familiar): Next.js, React. Ship pipeline: Git, GitHub, Docker. Daily tools: VS Code, Neovim, Postman." width="100%"/>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/tech-stack-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/tech-stack.svg" />
+  <img src="./assets/tech-stack.svg" alt="Tech stack, drawn as slowly turning rings of logos: the closer to the centre, the more I use it. Every day: NestJS, Node.js, TypeScript, JavaScript. Most days: PostgreSQL, Redis, MySQL, Docker, Git, GitHub, Postman, Neovim, VS Code. When needed: Next.js, React. Learning now: Go, Kubernetes." width="100%"/>
+</picture>
 </p>
 
 <br/>
