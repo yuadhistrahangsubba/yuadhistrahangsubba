@@ -64,22 +64,10 @@
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/yuadhistrahangsubba/yuadhistrahangsubba/output/activity-graph.svg" alt="Contribution activity graph (public + private)" />
-
-</div>
-
-<br/>
-
----
-
-## 🐍 &nbsp;Contribution Snake
-
-<div align="center">
-
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/yuadhistrahangsubba/yuadhistrahangsubba/output/github-contribution-grid-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/yuadhistrahangsubba/yuadhistrahangsubba/output/github-contribution-grid-snake.svg" />
-  <img alt="Contribution snake animation" src="https://raw.githubusercontent.com/yuadhistrahangsubba/yuadhistrahangsubba/output/github-contribution-grid-snake-dark.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/yuadhistrahangsubba/yuadhistrahangsubba/output/activity-graph-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/yuadhistrahangsubba/yuadhistrahangsubba/output/activity-graph.svg" />
+  <img src="https://raw.githubusercontent.com/yuadhistrahangsubba/yuadhistrahangsubba/output/activity-graph.svg" alt="Contribution activity over the last 31 days (public + private): total contributions, days active, the busiest day and the daily average, with weekends shaded. Refreshed every 6 hours." width="100%" />
 </picture>
 
 </div>
@@ -91,7 +79,11 @@
 ## 🏆 &nbsp;Achievements
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/yuadhistrahangsubba/yuadhistrahangsubba/output/trophies.svg" alt="Achievement skill tree: player level and gamerscore in the centre, with tiers from Bronze to Diamond for commits, pull requests, longest streak, years on GitHub, repositories, issues, followers and stars. Refreshed every 6 hours." width="100%"/>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/yuadhistrahangsubba/yuadhistrahangsubba/output/trophies-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/yuadhistrahangsubba/yuadhistrahangsubba/output/trophies.svg" />
+  <img src="https://raw.githubusercontent.com/yuadhistrahangsubba/yuadhistrahangsubba/output/trophies.svg" alt="Milestones (public + private): commits, pull requests, longest streak, years on GitHub, repositories, issues opened, followers and stars earned, each with five milestones, the ones reached so far, and the next one to aim for. Refreshed every 6 hours." width="100%"/>
+</picture>
 </p>
 
 <br/>
