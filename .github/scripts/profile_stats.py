@@ -6,16 +6,14 @@ This script merges the calendar with commits the token can read in private
 repositories (personal and organization), on every branch, counted per day in
 PROFILE_TZ (default UTC).
 
-Writes streak-stats.svg, activity-graph.svg, activity-graph-dark.svg, trophies.svg (achievement skill tree), dashboard.svg and dashboard-dark.svg into <output_dir>.
+Writes streak-stats.svg, activity-graph.svg, activity-graph-dark.svg, trophies.svg, trophies-dark.svg (milestones), dashboard.svg and dashboard-dark.svg into <output_dir>.
 
 Usage: GH_TOKEN=... python profile_stats.py <username> <output_dir>
 """
 
 import http.client
 import json
-import math
 import os
-import random
 import re
 import sys
 import time
@@ -451,185 +449,127 @@ def render_activity_svg(days, today, title, span=31, theme="light"):
     return "\n".join(o) + "\n"
 
 
-# Achievement tiers: name, colour, gamerscore points for reaching it.
-TIERS = (
-    ("Bronze", "#cd7f32", 10),
-    ("Silver", "#c9d1d9", 25),
-    ("Gold", "#e3b341", 50),
-    ("Platinum", "#79c0ff", 100),
-    ("Diamond", "#d2a8ff", 200),
+MILESTONES = (
+    # metric key, title, how to say "n of these", thresholds (five markers along the way)
+    ("commits", "Commits", "{n} commits", (100, 500, 1000, 2000, 4000)),
+    ("pull_requests", "Pull requests", "{n} pull requests", (10, 50, 100, 500, 1000)),
+    ("longest_streak", "Longest streak", "a {n}-day streak", (7, 30, 60, 100, 365)),
+    ("years", "Years on GitHub", "{n} years on GitHub", (1, 2, 4, 6, 10)),
+    ("repositories", "Repositories", "{n} repositories", (1, 10, 20, 35, 50)),
+    ("issues", "Issues opened", "{n} issues opened", (1, 10, 50, 100, 500)),
+    ("followers", "Followers", "{n} followers", (1, 10, 50, 200, 1000)),
+    ("stars", "Stars earned", "{n} stars", (1, 10, 50, 200, 1000)),
 )
-ACHIEVEMENTS = (
-    # metric key, title, icon, (singular, plural) unit, value needed for each tier
-    ("commits", "Commit Machine", "💾", ("commit", "commits"), (100, 500, 1000, 2000, 4000)),
-    ("pull_requests", "Merge Master", "🔀", ("pull request", "pull requests"), (10, 50, 100, 500, 1000)),
-    ("longest_streak", "Unbreakable", "🔥", ("day streak", "day streak"), (7, 30, 60, 100, 365)),
-    ("years", "Veteran", "🎖", ("year on GitHub", "years on GitHub"), (1, 2, 4, 6, 10)),
-    ("repositories", "Service Architect", "🧱", ("repository", "repositories"), (1, 10, 20, 35, 50)),
-    ("issues", "Bug Hunter", "🐛", ("issue opened", "issues opened"), (1, 10, 50, 100, 500)),
-    ("followers", "Crowd Puller", "👥", ("follower", "followers"), (1, 10, 50, 200, 1000)),
-    ("stars", "Star Collector", "⭐", ("star earned", "stars earned"), (1, 10, 50, 200, 1000)),
-)
-HEXAGON = "M0,-26 L22.5,-13 L22.5,13 L0,26 L-22.5,13 L-22.5,-13 Z"
-
-
-def short_number(n):
-    if isinstance(n, float):
-        return f"{n:.1f}".rstrip("0").rstrip(".")
-    return f"{n / 1000:.1f}k".replace(".0k", "k") if n >= 1000 else str(n)
-
-
-def tier_for(value, thresholds):
-    """Index of the highest tier reached, or -1 while still locked."""
-    return sum(1 for minimum in thresholds if value >= minimum) - 1
-
-
-def render_trophies_svg(metrics):
-    """Achievements as a constellation skill tree: the player in the middle,
-    one star node per achievement, coloured by tier, ringed by progress."""
-    t = DASH
-    W, H = 920, 650
-    cx, cy, rx, ry = W / 2, 318, 318, 196
-    rng = random.Random(7)
-
-    reached = [(ach, tier_for(metrics[ach[0]], ach[4])) for ach in ACHIEVEMENTS]
-    unlocked = sum(1 for _, tier in reached if tier >= 0)
-    level = sum(tier + 1 for _, tier in reached)
-    score = sum(sum(TIERS[k][2] for k in range(tier + 1)) for _, tier in reached)
-    summary = "; ".join(
-        f"{ach[1]}: {TIERS[tier][0] if tier >= 0 else 'locked'} ({short_number(metrics[ach[0]])} {ach[3][metrics[ach[0]] != 1]})"
-        for ach, tier in reached)
-
-    nodes = []
-    for i, (ach, tier) in enumerate(reached):
-        ang = -math.pi / 2 + i * 2 * math.pi / len(reached)
-        nodes.append((cx + rx * math.cos(ang), cy + ry * math.sin(ang), ach, tier))
-
-    out = []
-    a = out.append
-    a(f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" '
-      f"font-family='{DASH_MONO}' role=\"img\" aria-label=\"Skill tree: level {level}, {unlocked} of "
-      f'{len(ACHIEVEMENTS)} achievements unlocked, gamerscore {score}. {escape(summary)}.">')
-    a(f"""<defs>
-  <radialGradient id="sky" cx=".5" cy=".55" r=".75"><stop offset="0" stop-color="#151a3d"/><stop offset=".6" stop-color="#0b1022"/><stop offset="1" stop-color="#05070f"/></radialGradient>
-  <radialGradient id="halo" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="{t["purple"]}" stop-opacity=".45"/><stop offset="1" stop-color="{t["purple"]}" stop-opacity="0"/></radialGradient>
-  <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="{t["purple"]}"/><stop offset=".35" stop-color="{t["blue"]}"/><stop offset=".7" stop-color="{t["green"]}"/><stop offset="1" stop-color="{t["orange"]}"/>
-    <animateTransform attributeName="gradientTransform" type="rotate" from="0 .5 .5" to="360 .5 .5" dur="10s" repeatCount="indefinite"/>
-  </linearGradient>
-  <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-  <clipPath id="clip"><rect x="1" y="1" width="{W - 2}" height="{H - 2}" rx="16"/></clipPath>
-</defs>
-<style>
-  .lbl {{ paint-order: stroke; stroke: #0b1022; stroke-width: 5px; stroke-linejoin: round; }}
-  .in {{ opacity: 0; animation: in .7s cubic-bezier(.2,.8,.2,1) forwards; }}
-  .draw {{ stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 1.2s ease-out forwards; }}
-  .ring {{ stroke-dasharray: 100; stroke-dashoffset: 100; animation: ring 1.4s ease-out forwards; }}
-  .tw {{ animation: tw 3s ease-in-out infinite; }}
-  .pulse {{ animation: pulse 2.6s ease-in-out infinite; }}
-  .spin {{ transform-box: fill-box; transform-origin: center; animation: spin 40s linear infinite; }}
-  @keyframes in {{ from {{ opacity: 0; transform: scale(.96); }} to {{ opacity: 1; transform: none; }} }}
-  @keyframes draw {{ to {{ stroke-dashoffset: 0; }} }}
-  @keyframes ring {{ to {{ stroke-dashoffset: var(--p); }} }}
-  @keyframes tw {{ 0%,100% {{ opacity: .2; }} 50% {{ opacity: .9; }} }}
-  @keyframes pulse {{ 0%,100% {{ opacity: .15; }} 50% {{ opacity: .45; }} }}
-  @keyframes spin {{ to {{ transform: rotate(360deg); }} }}
-  @media (prefers-reduced-motion: reduce) {{
-    .in {{ animation: none; opacity: 1; }}
-    .draw {{ animation: none; stroke-dashoffset: 0; }}
-    .ring {{ animation: none; stroke-dashoffset: var(--p); }}
-    .tw, .pulse, .spin {{ animation: none; }}
-  }}
-</style>
-<g clip-path="url(#clip)">
-<rect width="{W}" height="{H}" fill="url(#sky)"/>""")
-
-    for _ in range(90):
-        a(f'<circle class="tw" cx="{rng.uniform(8, W - 8):.0f}" cy="{rng.uniform(8, H - 8):.0f}" r="{rng.choice((.6, .8, 1, 1.3))}" fill="#fff" '
-          f'style="animation-delay:{rng.uniform(0, 3):.2f}s;animation-duration:{rng.uniform(2, 5):.1f}s"/>')
-
-    # Orbit guide and the constellation outline between neighbouring unlocked nodes.
-    a(f'<ellipse class="spin" cx="{cx}" cy="{cy}" rx="{rx}" ry="{ry}" fill="none" stroke="#ffffff" stroke-opacity=".06" stroke-dasharray="2 10"/>')
-    for i, (x, y, _, tier) in enumerate(nodes):
-        nx, ny, _, ntier = nodes[(i + 1) % len(nodes)]
-        if tier >= 0 and ntier >= 0:
-            a(f'<line x1="{x:.1f}" y1="{y:.1f}" x2="{nx:.1f}" y2="{ny:.1f}" stroke="#ffffff" stroke-opacity=".08"/>')
-
-    # Branches from the player to each node, with energy pulses on unlocked ones.
-    for i, (x, y, _, tier) in enumerate(nodes):
-        if tier < 0:
-            a(f'<line x1="{cx}" y1="{cy}" x2="{x:.1f}" y2="{y:.1f}" stroke="#ffffff" stroke-opacity=".12" stroke-dasharray="3 6"/>')
-            continue
-        color = TIERS[tier][1]
-        a(f'<path class="draw" style="animation-delay:{.3 + i * .08:.2f}s" pathLength="1" d="M{cx},{cy} L{x:.1f},{y:.1f}" stroke="{color}" stroke-opacity=".45" stroke-width="1.6"/>')
-        a(f'<circle r="3" fill="{color}" filter="url(#glow)" opacity="0">'
-          f'<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.1;.85;1" dur="2.8s" begin="{1.4 + i * .35:.2f}s" repeatCount="indefinite"/>'
-          f'<animateMotion path="M{cx},{cy} L{x:.1f},{y:.1f}" dur="2.8s" begin="{1.4 + i * .35:.2f}s" repeatCount="indefinite"/></circle>')
-
-    # Player core.
-    a(f'<g class="in" style="transform-origin:{cx}px {cy}px">')
-    a(f'<circle class="pulse" cx="{cx}" cy="{cy}" r="78" fill="url(#halo)"/>')
-    a(f'<path d="{HEXAGON}" transform="translate({cx} {cy}) scale(1.75)" fill="#0c1226" stroke="url(#edge)" stroke-width="1.4"/>')
-    a(f'<text x="{cx}" y="{cy - 2}" font-size="20" font-weight="700" fill="{t["fg"]}" text-anchor="middle">Y.D</text>')
-    a(f'<text x="{cx}" y="{cy + 18}" font-size="11" font-weight="700" fill="{t["green"]}" text-anchor="middle" letter-spacing=".1em">LVL {level}</text>')
-    a("</g>")
-
-    # Achievement nodes.
-    for i, (x, y, (key, title, icon, unit, thresholds), tier) in enumerate(nodes):
-        value = metrics[key]
-        locked = tier < 0
-        color = "#3d444d" if locked else TIERS[tier][1]
-        if tier == len(TIERS) - 1:
-            progress, hint = 100, "max tier ✦"
-        else:
-            lo = thresholds[tier] if tier >= 0 else 0
-            hi = thresholds[tier + 1]
-            progress = 100 * max(0.0, min(1.0, (value - lo) / (hi - lo)))
-            hint = f"→ {TIERS[tier + 1][0]} at {short_number(hi)}"
-        next_color = TIERS[min(tier + 1, len(TIERS) - 1)][1]
-        delay = .5 + i * .1
-        a(f'<g class="in" style="animation-delay:{delay:.2f}s;transform-origin:{x:.1f}px {y:.1f}px">')
-        if not locked:
-            a(f'<circle class="pulse" cx="{x:.1f}" cy="{y:.1f}" r="40" fill="{color}" style="animation-delay:{i * .3:.1f}s"/>')
-        a(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="34" fill="none" stroke="#ffffff" stroke-opacity=".08" stroke-width="3"/>')
-        if progress > 0:
-            a(f'<circle class="ring" style="animation-delay:{delay + .5:.2f}s;--p:{100 - progress:.1f}" cx="{x:.1f}" cy="{y:.1f}" r="34" fill="none" stroke="{next_color}" stroke-width="3" stroke-linecap="round" pathLength="100" transform="rotate(-90 {x:.1f} {y:.1f})"/>')
-        a(f'<path d="{HEXAGON}" transform="translate({x:.1f} {y:.1f})" fill="#0c1226" stroke="{color}" stroke-width="2"/>')
-        a(f'<path d="{HEXAGON}" transform="translate({x:.1f} {y:.1f})" fill="{color}" fill-opacity="{.08 if locked else .2}"/>')
-        a(f'<text x="{x:.1f}" y="{y + 7:.1f}" font-size="19" text-anchor="middle" opacity="{.45 if locked else 1}">{"🔒" if locked else icon}</text>')
-        ly = y + 52
-        a(f'<text x="{x:.1f}" y="{ly:.1f}" class="lbl" font-size="12" font-weight="700" fill="{t["dim"] if locked else t["fg"]}" text-anchor="middle">{escape(title)}</text>')
-        a(f'<text x="{x:.1f}" y="{ly + 15:.1f}" class="lbl" font-size="10" text-anchor="middle" fill="{t["muted"]}">'
-          f'<tspan fill="{t["muted"] if locked else color}" font-weight="700">{"LOCKED" if locked else TIERS[tier][0].upper()}</tspan>'
-          f' · {escape(short_number(value))} {escape(unit[value != 1])}</text>')
-        a(f'<text x="{x:.1f}" y="{ly + 29:.1f}" class="lbl" font-size="9" fill="{t["muted"]}" text-anchor="middle">{escape(hint)}</text>')
-        a("</g>")
-
-    # Header.
-    a(f"""<g class="in">
-  <text x="24" y="40" font-size="18" font-weight="700" fill="{t["fg"]}" letter-spacing=".04em">SKILL TREE<tspan fill="{t["purple"]}"> / </tspan>player 1</text>
-  <text x="24" y="60" font-size="10.5" fill="{t["muted"]}">{unlocked}/{len(ACHIEVEMENTS)} unlocked · ring = progress to next tier</text>
-  <rect x="{W - 24 - 150}" y="20" width="150" height="44" rx="12" fill="{t["green"]}" fill-opacity=".08" stroke="{t["green"]}" stroke-opacity=".35"/>
-  <text x="{W - 24 - 134}" y="37" font-size="9.5" fill="{t["dim"]}" letter-spacing=".1em">GAMERSCORE</text>
-  <text x="{W - 24 - 134}" y="56" font-size="16" font-weight="700" fill="{t["green"]}">G {score:,}</text>
-</g>""")
-    legend_x = 24
-    for i, (name, color, _) in enumerate(TIERS):
-        x = legend_x + i * 82
-        a(f'<g class="in"><circle cx="{x + 5}" cy="{H - 22}" r="4.5" fill="{color}"/><text x="{x + 15}" y="{H - 18}" font-size="10" fill="{t["dim"]}">{name}</text></g>')
-
-    a("</g>")
-    a(f'<rect x="1" y="1" width="{W - 2}" height="{H - 2}" rx="16" fill="none" stroke="url(#edge)" stroke-width="1.6"/>')
-    a("</svg>")
-    return "\n".join(out) + "\n"
-
-
-DASH = {
-    "bg0": "#070b14", "bg1": "#121433", "panel": "#0c1226", "fg": "#e6edf3", "dim": "#8b949e",
-    "muted": "#6e7681", "purple": "#d2a8ff", "blue": "#79c0ff", "green": "#7ee787",
-    "orange": "#ffa657", "yellow": "#e3b341", "red": "#ff7b72",
+MS_PAPER = {
+    "light": dict(bg="#fbf8f2", ink="#1f1c18", soft="#4a443c", muted="#8a8174",
+                  rule="#e4ddd0", track="#e4ddd0", accent="#c0561b"),
+    "dark":  dict(bg="#15130f", ink="#efe9de", soft="#cfc6b8", muted="#8d8578",
+                  rule="#2e2a23", track="#3a352d", accent="#e98a45"),
 }
-DASH_MONO = "\"JetBrains Mono\",\"SF Mono\",Menlo,Consolas,monospace"
+MS_SERIF = "'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif"
+MS_SANS = "-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+
+
+def _num(n):
+    if isinstance(n, float) and not n.is_integer():
+        return f"{n:.1f}"
+    n = int(n)
+    return f"{n / 1000:.1f}k".replace(".0k", "k") if n >= 1000 else f"{n:,}"
+
+
+def _to_go(key, value, target):
+    gap = target - value
+    if key == "years":
+        months = max(round(gap * 12), 1)
+        return f"about {months} month{'s' if months != 1 else ''} to go"
+    if key == "longest_streak":
+        return f"{_num(gap)} more day{'s' if gap != 1 else ''} in a row"
+    return f"{_num(gap)} to go"
+
+
+def _say(phrase, n):
+    s = phrase.format(n=_num(n))
+    return s.replace("1 stars", "1 star").replace("1 followers", "1 follower").replace("1 issues", "1 issue")
+
+
+def render_trophies_svg(metrics, theme="light"):
+    """Eight measures, each a line with five markers; reached markers are filled.
+    theme is "light" or "dark"."""
+    t = MS_PAPER[theme]
+    W, H = 920, 624
+    o = []
+    a = o.append
+
+    def text(x, y, s, size=15, fill=None, italic=False, anchor="start", cls="s", extra=""):
+        st = ' font-style="italic"' if italic else ""
+        an = f' text-anchor="{anchor}"' if anchor != "start" else ""
+        a(f'<text x="{x:.1f}" y="{y:.1f}" class="{cls}" font-size="{size}"{st}{an} fill="{fill or t["soft"]}"{extra}>{s}</text>')
+
+    rows = []
+    for key, title, phrase, th in MILESTONES:
+        v = metrics.get(key, 0) or 0
+        reached = sum(1 for m in th if v >= m)
+        rows.append((key, title, phrase, th, v, reached))
+    done = sum(r[5] for r in rows)
+    total = 5 * len(rows)
+    pending = [r for r in rows if r[5] < 5]
+    closest = min(pending, key=lambda r: (r[3][r[5]] - r[4]) / r[3][r[5]], default=None)
+
+    a(f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" '
+      f'aria-label="Milestones: {done} of {total} reached. ' +
+      "; ".join(f"{title}: {_num(v)}, {reached} of 5" for _, title, _, _, v, reached in rows) + '.">')
+    a(f'<style>.s{{font-family:{MS_SERIF}}} .k{{font-family:{MS_SANS}}}'
+      '.p{transform-box:fill-box;transform-origin:left;animation:p 1.4s cubic-bezier(.2,.8,.2,1) both}'
+      '@keyframes p{from{transform:scaleX(0)}}'
+      '@media (prefers-reduced-motion:reduce){.p{animation:none}}</style>')
+    a(f'<rect width="{W}" height="{H}" rx="10" fill="{t["bg"]}"/>')
+
+    text(56, 52, "MILESTONES", 11, t["muted"], cls="k", extra=' letter-spacing="2.4"')
+    text(864, 52, "markers along the way, not trophies", 13, t["muted"], True, "end")
+    a(f'<line x1="56" y1="68" x2="864" y2="68" stroke="{t["rule"]}"/>')
+    text(56, 110, f"{done} of {total} milestones reached so far.", 30, t["ink"], extra=' letter-spacing="-0.2"')
+    if closest:
+        key, _, phrase, th, v, reached = closest
+        text(56, 142, f"Next up: {escape(_say(phrase, th[reached]))}, "
+                      f"{escape(_to_go(key, v, th[reached]))}.", 20, t["accent"], True)
+
+    colw, x0s, y0, rowh = 352, (56, 512), 196, 96
+    for i, (key, title, phrase, th, v, reached) in enumerate(rows):
+        x0 = x0s[i // 4]
+        y = y0 + (i % 4) * rowh
+        text(x0, y, escape(title), 17, t["ink"])
+        text(x0 + colw, y, _num(v), 17, t["ink"], anchor="end")
+
+        ty = y + 22
+        ticks = [x0 + colw * (k + 1) / 5 for k in range(5)]
+        a(f'<line x1="{x0}" y1="{ty}" x2="{x0 + colw}" y2="{ty}" stroke="{t["track"]}" stroke-width="2" stroke-linecap="round"/>')
+        if reached == 5:
+            px = x0 + colw
+        else:
+            lo_v = th[reached - 1] if reached else 0
+            lo_x = ticks[reached - 1] if reached else x0
+            frac = (v - lo_v) / (th[reached] - lo_v)
+            px = lo_x + (ticks[reached] - lo_x) * max(0.0, min(frac, 1.0))
+        if px > x0:
+            a(f'<line class="p" style="animation-delay:{.15 + i * .08:.2f}s" x1="{x0}" y1="{ty}" x2="{px:.1f}" y2="{ty}" '
+              f'stroke="{t["ink"]}" stroke-width="2" stroke-linecap="round"/>')
+        for k, tx in enumerate(ticks):
+            hit = k < reached
+            a(f'<circle cx="{tx:.1f}" cy="{ty}" r="5" fill="{t["accent"] if hit else t["bg"]}" '
+              f'stroke="{t["accent"] if hit else t["track"]}" stroke-width="1.5"><title>{_num(th[k])}</title></circle>')
+            text(tx, ty + 20, _num(th[k]), 11, t["muted"], anchor="end" if k == 4 else "middle")
+
+        note = "every marker reached" if reached == 5 else f"next: {_say(phrase, th[reached])} · {_to_go(key, v, th[reached])}"
+        text(x0, ty + 44, escape(note), 13, t["muted"], True)
+
+    a(f'<line x1="56" y1="{H - 42}" x2="864" y2="{H - 42}" stroke="{t["rule"]}"/>')
+    a(f'<circle cx="62" cy="{H - 22}" r="5" fill="{t["accent"]}"/>')
+    text(74, H - 18, "reached", 13, t["muted"], True)
+    a(f'<circle cx="146" cy="{H - 22}" r="5" fill="{t["bg"]}" stroke="{t["track"]}" stroke-width="1.5"/>')
+    text(158, H - 18, "still ahead", 13, t["muted"], True)
+    text(864, H - 18, "public + private · refreshed every 6 hours", 13, t["muted"], True, "end")
+    a("</svg>")
+    return "\n".join(o) + "\n"
 
 
 PAPER = {
@@ -804,8 +744,9 @@ def main():
     metrics["commits"] = public_commits + sum(private.values())
     metrics["years"] = round((today - start).days / 365.25, 1)
     metrics["longest_streak"] = stats["longest"]
-    with open(os.path.join(out_dir, "trophies.svg"), "w") as f:
-        f.write(render_trophies_svg(metrics))
+    for theme, name in (("light", "trophies.svg"), ("dark", "trophies-dark.svg")):
+        with open(os.path.join(out_dir, name), "w") as f:
+            f.write(render_trophies_svg(metrics, theme))
     for theme, name in (("light", "dashboard.svg"), ("dark", "dashboard-dark.svg")):
         with open(os.path.join(out_dir, name), "w") as f:
             f.write(render_dashboard_svg(login, days, today, start, stats, metrics, theme))
