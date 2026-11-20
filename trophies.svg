@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="624" viewBox="0 0 920 624" role="img" aria-label="Milestones: 18 of 40 reached. Commits: 4.3k, 5 of 5; Pull requests: 754, 4 of 5; Longest streak: 40, 2 of 5; Years on GitHub: 5.6, 3 of 5; Repositories: 19, 2 of 5; Issues opened: 1, 1 of 5; Followers: 5, 1 of 5; Stars earned: 0, 0 of 5.">
+<style>.s{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif} .k{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif}.p{transform-box:fill-box;transform-origin:left;animation:p 1.4s cubic-bezier(.2,.8,.2,1) both}@keyframes p{from{transform:scaleX(0)}}@media (prefers-reduced-motion:reduce){.p{animation:none}}</style>
+<rect width="920" height="624" rx="10" fill="#fbf8f2"/>
+<text x="56.0" y="52.0" class="k" font-size="11" fill="#8a8174" letter-spacing="2.4">MILESTONES</text>
+<text x="864.0" y="52.0" class="s" font-size="13" font-style="italic" text-anchor="end" fill="#8a8174">markers along the way, not trophies</text>
+<line x1="56" y1="68" x2="864" y2="68" stroke="#e4ddd0"/>
+<text x="56.0" y="110.0" class="s" font-size="30" fill="#1f1c18" letter-spacing="-0.2">18 of 40 milestones reached so far.</text>
+<text x="56.0" y="142.0" class="s" font-size="20" font-style="italic" fill="#c0561b">Next up: 20 repositories, 1 to go.</text>
+<text x="56.0" y="196.0" class="s" font-size="17" fill="#1f1c18">Commits</text>
+<text x="408.0" y="196.0" class="s" font-size="17" text-anchor="end" fill="#1f1c18">4.3k</text>
+<line x1="56" y1="218" x2="408" y2="218" stroke="#e4ddd0" stroke-width="2" stroke-linecap="round"/>
+<line class="p" style="animation-delay:0.15s" x1="56" y1="218" x2="408.0" y2="218" stroke="#1f1c18" stroke-width="2" stroke-linecap="round"/>
+<circle cx="126.4" cy="218" r="5" fill="#c0561b" stroke="#c0561b" stroke-width="1.5"><title>100</title></circle>
+<text x="126.4" y="238.0" class="s" font-size="11" text-anchor="middle" fill="#8a8174">100</text>
+<circle cx="196.8" cy="218" r="5" fill="#c0561b" stroke="#c0561b" stroke-width="1.5"><title>500</title></circle>
+<text x="196.8" y="238.0" class="s" font-size="11" text-anchor="middle" fill="#8a8174">500</text>
+<circle cx="267.2" cy="218" r="5" fill="#c0561b" stroke="#c0561b" stroke-width="1.5"><title>1k</title></circle>
+<text x="267.2" y="238.0" class="s" font-size="11" text-anchor="middle" fill="#8a8174">1k</text>
+<circle cx="337.6" cy="218" r="5" fill="#c0561b" stroke="#c0561b" stroke-width="1.5"><title>2k</title></circle>
+<text x="337.6" y="238.0" class="s" font-size="11" text-anchor="middle" fill="#8a8174">2k</text>
+<circle cx="408.0" cy="218" r="5" fill="#c0561b" stroke="#c0561b" stroke-width="1.5"><title>4k</title></circle>
+<text x="408.0" y="238.0" class="s" font-size="11" text-anchor="end" fill="#8a8174">4k</text>
+<text x="56.0" y="262.0" class="s" font-size="13" font-style="italic" fill="#8a8174">every marker reached</text>
+<text x="56.0" y="292.0" class="s" font-size="17" fill="#1f1c18">Pull requests</text>
+<text x="408.0" y="292.0" class="s" font-size="17" text-anchor="end" fill="#1f1c18">754</text>
+<line x1="56" y1="314" x2="408" y2="314" stroke="#e4ddd0" stroke-width="2" stroke-linecap="round"/>
+<line class="p" style="animation-delay:0.23s" x1="56" y1="314" x2="373.4" y2="314" stroke="#1f1c18" stroke-width="2" stroke-linecap="round"/>
+<circle cx="126.4" cy="314" r="5" fill="#c0561b" stroke="#c0561b" stroke-width="1.5"><title>10</title></circle>
+<text x="126.4" y="334.0" class="s" font-size="11" text-anchor="middle" fill="#8a8174">10</text>
+<circle cx="196.8" cy="314" r="5" fill="#c0561b" stroke="#c0561b" stroke-width="1.5"><title>50</title></circle>
+<text x="196.8" y="334.0" class="s" font-size="11" text-anchor="middle" fill="#8a8174">50</text>
+<circle cx="267.2" cy="314" r="5" fill="#c0561b" stroke="#c0561b" stroke-width="1.5"><title>100</title></circle>
+<text x="267.2" y="334.0" class="s" font-size="11" text-anchor="middle" fill="#8a8174">100</text>
+<circle cx="337.6" cy="314" r="5" fill="#c0561b" stroke="#c0561b" stroke-width="1.5"><title>500</title></circle>
+<text x="337.6" y="334.0" class="s" font-size="11" text-anchor="middle" fill="#8a8174">500</text>
+<circle cx="408.0" cy="314" r="5" fill="#fbf8f2" stroke="#e4ddd0" stroke-width="1.5"><title>1k</title></circle>
+<text x="408.0" y="334.0" class="s" font-size="11" text-anchor="end" fill="#8a8174">1k</text>
+<text x="56.0" y="358.0" class="s" font-size="13" font-style="italic" fill="#8a8174">next: 1k pull requests · 246 to go</text>
+<text x="56.0" y="388.0" class="s" font-size="17" fill="#1f1c18">Longest streak</text>
+<text x="408.0" y="388.0" class="s" font-size="17" text-anchor="end" fill="#1f1c18">40</text>
+<line x1="56" y1="410" x2="408" y2="410" stroke="#e4ddd0" stroke-width="2" stroke-linecap="round"/>
+<line class="p" style="animation-delay:0.31s" x1="56" y1="410" x2="220.3" y2="410" stroke="#1f1c18" stroke-width="2" stroke-linecap="round"/>
+<circle cx="126.4" cy="410" r="5" fill="#c0561b" stroke="#c0561b" stroke-width="1.5"><title>7</title></circle>
+<text x="126.4" y="430.0" class="s" font-size="11" text-anchor="middle" fill="#8a8174">7</text>
+<circle cx="196.8" cy="410" r="5" fill="#c0561b" stroke="#c0561b" stroke-width="1.5"><title>30</title></circle>
+<text x="196.8" y="430.0" class="s" font-size="11" text-anchor="middle" fill="#8a8174">30</text>
+<circle cx="267.2" cy="410" r="5" fill="#fbf8f2" stroke="#e4ddd0" stroke-width="1.5"><title>60</title></circle>
+<text x="267.2" y="430.0" class="s" font-size="11" text-anchor="middle" fill="#8a8174">60</text>
+<circle cx="337.6" cy="410" r="5" fill="#fbf8f2" stroke="#e4ddd0" stroke-width="1.5"><title>100</title></circle>
+<text x="337.6" y="430.0" class="s" font-size="11" text-anchor="middle" fill="#8a8174">100</text>
+<circle cx="408.0" cy="410" r="5" fill="#fbf8f2" stroke="#e4ddd0" stroke-width="1.5"><title>365</title></circle>
+<text x="408.0" y="430.0" class="s" font-size="11" text-anchor="end" fill="#8a8174">365</text>
+<text x="56.0" y="454.0" class="s" font-size="13" font-style="italic" fill="#8a8174">next: a 60-day streak · 20 more days in a row</text>
+<text x="56.0" y="484.0" class="s" font-size="17" fill="#1f1c18">Years on GitHub</text>
+<text x="408.0" y="484.0" class="s" font-size="17" text-anchor="end" fill="#1f1c18">5.6</text>
+<line x1="56" y1="506" x2="408" y2="506" stroke="#e4ddd0" stroke-width="2" stroke-linecap="round"/>
+<line class="p" style="animation-delay:0.39s" x1="56" y1="506" x2="323.5" y2="506" stroke="#1f1c18" stroke-width="2" stroke-linecap="round"/>
+<circle cx="126.4" cy="506" r="5" fill="#c0561b" stroke="#c0561b" stroke-width="1.5"><title>1</title></circle>
+<text x="126.4" y="526.0" class="s" font-size="11" text-anchor="middle" fill="#8a8174">1</text>
+<circle cx="196.8" cy="506" r="5" fill="#c0561b" stroke="#c0561b" stroke-width="1.5"><title>2</title></circle>
+<text x="196.8" y="526.0" class="s" font-size="11" text-anchor="middle" fill="#8a8174">2</text>
+<circle cx="267.2" cy="506" r="5" fill="#c0561b" stroke="#c0561b" stroke-width="1.5"><title>4</title></circle>
+<text x="267.2" y="526.0" class="s" font-size="11" text-anchor="middle" fill="#8a8174">4</text>
+<circle cx="337.6" cy="506" r="5" fill="#fbf8f2" stroke="#e4ddd0" stroke-width="1.5"><title>6</title></circle>
+<text x="337.6" y="526.0" class="s" font-size="11" text-anchor="middle" fill="#8a8174">6</text>
+<circle cx="408.0" cy="506" r="5" fill="#fbf8f2" stroke="#e4ddd0" stroke-width="1.5"><title>10</title></circle>
+<text x="408.0" y="526.0" class="s" font-size="11" text-anchor="end" fill="#8a8174">10</text>
+<text x="56.0" y="550.0" class="s" font-size="13" font-style="italic" fill="#8a8174">next: 6 years on GitHub · about 5 months to go</text>
+<text x="512.0" y="196.0" class="s" font-size="17" fill="#1f1c18">Repositories</text>
+<text x="864.0" y="196.0" class="s" font-size="17" text-anchor="end" fill="#1f1c18">19</text>
+<line x1="512" y1="218" x2="864" y2="218" stroke="#e4ddd0" stroke-width="2" stroke-linecap="round"/>
+<line class="p" style="animation-delay:0.47s" x1="512" y1="218" x2="716.2" y2="218" stroke="#1f1c18" stroke-width="2" stroke-linecap="round"/>
+<circle cx="582.4" cy="218" r="5" fill="#c0561b" stroke="#c0561b" stroke-width="1.5"><title>1</title></circle>
+<text x="582.4" y="238.0" class="s" font-size="11" text-anchor="middle" fill="#8a8174">1</text>
+<circle cx="652.8" cy="218" r="5" fill="#c0561b" stroke="#c0561b" stroke-width="1.5"><title>10</title></circle>
+<text x="652.8" y="238.0" class="s" font-size="11" text-anchor="middle" fill="#8a8174">10</text>
+<circle cx="723.2" cy="218" r="5" fill="#fbf8f2" stroke="#e4ddd0" stroke-width="1.5"><title>20</title></circle>
+<text x="723.2" y="238.0" class="s" font-size="11" text-anchor="middle" fill="#8a8174">20</text>
+<circle cx="793.6" cy="218" r="5" fill="#fbf8f2" stroke="#e4ddd0" stroke-width="1.5"><title>35</title></circle>
+<text x="793.6" y="238.0" class="s" font-size="11" text-anchor="middle" fill="#8a8174">35</text>
+<circle cx="864.0" cy="218" r="5" fill="#fbf8f2" stroke="#e4ddd0" stroke-width="1.5"><title>50</title></circle>
+<text x="864.0" y="238.0" class="s" font-size="11" text-anchor="end" fill="#8a8174">50</text>
+<text x="512.0" y="262.0" class="s" font-size="13" font-style="italic" fill="#8a8174">next: 20 repositories · 1 to go</text>
+<text x="512.0" y="292.0" class="s" font-size="17" fill="#1f1c18">Issues opened</text>
+<text x="864.0" y="292.0" class="s" font-size="17" text-anchor="end" fill="#1f1c18">1</text>
+<line x1="512" y1="314" x2="864" y2="314" stroke="#e4ddd0" stroke-width="2" stroke-linecap="round"/>
+<line class="p" style="animation-delay:0.55s" x1="512" y1="314" x2="582.4" y2="314" stroke="#1f1c18" stroke-width="2" stroke-linecap="round"/>
+<circle cx="582.4" cy="314" r="5" fill="#c0561b" stroke="#c0561b" stroke-width="1.5"><title>1</title></circle>
+<text x="582.4" y="334.0" class="s" font-size="11" text-anchor="middle" fill="#8a8174">1</text>
+<circle cx="652.8" cy="314" r="5" fill="#fbf8f2" stroke="#e4ddd0" stroke-width="1.5"><title>10</title></circle>
+<text x="652.8" y="334.0" class="s" font-size="11" text-anchor="middle" fill="#8a8174">10</text>
+<circle cx="723.2" cy="314" r="5" fill="#fbf8f2" stroke="#e4ddd0" stroke-width="1.5"><title>50</title></circle>
+<text x="723.2" y="334.0" class="s" font-size="11" text-anchor="middle" fill="#8a8174">50</text>
+<circle cx="793.6" cy="314" r="5" fill="#fbf8f2" stroke="#e4ddd0" stroke-width="1.5"><title>100</title></circle>
+<text x="793.6" y="334.0" class="s" font-size="11" text-anchor="middle" fill="#8a8174">100</text>
+<circle cx="864.0" cy="314" r="5" fill="#fbf8f2" stroke="#e4ddd0" stroke-width="1.5"><title>500</title></circle>
+<text x="864.0" y="334.0" class="s" font-size="11" text-anchor="end" fill="#8a8174">500</text>
+<text x="512.0" y="358.0" class="s" font-size="13" font-style="italic" fill="#8a8174">next: 10 issues opened · 9 to go</text>
+<text x="512.0" y="388.0" class="s" font-size="17" fill="#1f1c18">Followers</text>
+<text x="864.0" y="388.0" class="s" font-size="17" text-anchor="end" fill="#1f1c18">5</text>
+<line x1="512" y1="410" x2="864" y2="410" stroke="#e4ddd0" stroke-width="2" stroke-linecap="round"/>
+<line class="p" style="animation-delay:0.63s" x1="512" y1="410" x2="613.7" y2="410" stroke="#1f1c18" stroke-width="2" stroke-linecap="round"/>
+<circle cx="582.4" cy="410" r="5" fill="#c0561b" stroke="#c0561b" stroke-width="1.5"><title>1</title></circle>
+<text x="582.4" y="430.0" class="s" font-size="11" text-anchor="middle" fill="#8a8174">1</text>
+<circle cx="652.8" cy="410" r="5" fill="#fbf8f2" stroke="#e4ddd0" stroke-width="1.5"><title>10</title></circle>
+<text x="652.8" y="430.0" class="s" font-size="11" text-anchor="middle" fill="#8a8174">10</text>
+<circle cx="723.2" cy="410" r="5" fill="#fbf8f2" stroke="#e4ddd0" stroke-width="1.5"><title>50</title></circle>
+<text x="723.2" y="430.0" class="s" font-size="11" text-anchor="middle" fill="#8a8174">50</text>
+<circle cx="793.6" cy="410" r="5" fill="#fbf8f2" stroke="#e4ddd0" stroke-width="1.5"><title>200</title></circle>
+<text x="793.6" y="430.0" class="s" font-size="11" text-anchor="middle" fill="#8a8174">200</text>
+<circle cx="864.0" cy="410" r="5" fill="#fbf8f2" stroke="#e4ddd0" stroke-width="1.5"><title>1k</title></circle>
+<text x="864.0" y="430.0" class="s" font-size="11" text-anchor="end" fill="#8a8174">1k</text>
+<text x="512.0" y="454.0" class="s" font-size="13" font-style="italic" fill="#8a8174">next: 10 followers · 5 to go</text>
+<text x="512.0" y="484.0" class="s" font-size="17" fill="#1f1c18">Stars earned</text>
+<text x="864.0" y="484.0" class="s" font-size="17" text-anchor="end" fill="#1f1c18">0</text>
+<line x1="512" y1="506" x2="864" y2="506" stroke="#e4ddd0" stroke-width="2" stroke-linecap="round"/>
+<circle cx="582.4" cy="506" r="5" fill="#fbf8f2" stroke="#e4ddd0" stroke-width="1.5"><title>1</title></circle>
+<text x="582.4" y="526.0" class="s" font-size="11" text-anchor="middle" fill="#8a8174">1</text>
+<circle cx="652.8" cy="506" r="5" fill="#fbf8f2" stroke="#e4ddd0" stroke-width="1.5"><title>10</title></circle>
+<text x="652.8" y="526.0" class="s" font-size="11" text-anchor="middle" fill="#8a8174">10</text>
+<circle cx="723.2" cy="506" r="5" fill="#fbf8f2" stroke="#e4ddd0" stroke-width="1.5"><title>50</title></circle>
+<text x="723.2" y="526.0" class="s" font-size="11" text-anchor="middle" fill="#8a8174">50</text>
+<circle cx="793.6" cy="506" r="5" fill="#fbf8f2" stroke="#e4ddd0" stroke-width="1.5"><title>200</title></circle>
+<text x="793.6" y="526.0" class="s" font-size="11" text-anchor="middle" fill="#8a8174">200</text>
+<circle cx="864.0" cy="506" r="5" fill="#fbf8f2" stroke="#e4ddd0" stroke-width="1.5"><title>1k</title></circle>
+<text x="864.0" y="526.0" class="s" font-size="11" text-anchor="end" fill="#8a8174">1k</text>
+<text x="512.0" y="550.0" class="s" font-size="13" font-style="italic" fill="#8a8174">next: 1 star · 1 to go</text>
+<line x1="56" y1="582" x2="864" y2="582" stroke="#e4ddd0"/>
+<circle cx="62" cy="602" r="5" fill="#c0561b"/>
+<text x="74.0" y="606.0" class="s" font-size="13" font-style="italic" fill="#8a8174">reached</text>
+<circle cx="146" cy="602" r="5" fill="#fbf8f2" stroke="#e4ddd0" stroke-width="1.5"/>
+<text x="158.0" y="606.0" class="s" font-size="13" font-style="italic" fill="#8a8174">still ahead</text>
+<text x="864.0" y="606.0" class="s" font-size="13" font-style="italic" text-anchor="end" fill="#8a8174">public + private · refreshed every 6 hours</text>
+</svg>
