@@ -38,13 +38,13 @@
 <text x="56" y="395" class="s" font-size="15" fill="#cfc6b8">Next.js and React for the UI</text>
 <text x="56" y="426" class="s" font-size="14" font-style="italic" fill="#e98a45">Learning now</text>
 <text x="56" y="447" class="s" font-size="15" fill="#cfc6b8">Go and Kubernetes</text>
-<text x="56" y="616" class="s" font-size="14" font-style="italic" fill="#8d8578">things drift inward as I learn them — Y.D</text>
+<text x="56" y="616" class="s" font-size="14" font-style="italic" fill="#8d8578">things drift inward as I learn them — Yuadhistra</text>
 <circle cx="610" cy="330" r="84" fill="none" stroke="#3a352d" stroke-width="1.3"/>
 <circle cx="610" cy="330" r="168" fill="none" stroke="#3a352d" stroke-width="1.3"/>
 <circle cx="610" cy="330" r="234" fill="none" stroke="#3a352d" stroke-width="1.3" stroke-dasharray="2 6" stroke-linecap="round"/>
 <circle cx="610" cy="330" r="282" fill="none" stroke="#3a352d" stroke-width="1.3" stroke-dasharray="2 6" stroke-linecap="round"/>
-<circle cx="610" cy="330" r="24" fill="#15130f" stroke="#e0b04a" stroke-width="1.5"/>
-<text x="610" y="335" class="s" font-size="15" font-style="italic" fill="#efe9de" text-anchor="middle">Y.D</text>
+<circle cx="610" cy="330" r="34" fill="#15130f" stroke="#e0b04a" stroke-width="1.5"/>
+<text x="610" y="334.5" class="s" font-size="12.5" font-style="italic" fill="#efe9de" text-anchor="middle">Yuadhistra</text>
 <g class="ring r0">
 <g transform="translate(669.4 270.6)"><g class="item c0"><rect x="-44" y="-44" width="88" height="88" fill="none"/><circle r="26.0" fill="#15130f"/><use href="#i-nestjs" xlink:href="#i-nestjs" x="-20.0" y="-20.0" width="40" height="40"/><text y="35.0" class="s" font-size="12" fill="#cfc6b8" text-anchor="middle">NestJS</text></g></g>
 <g transform="translate(669.4 389.4)"><g class="item c0"><rect x="-44" y="-44" width="88" height="88" fill="none"/><circle r="26.0" fill="#15130f"/><use href="#i-nodejs" xlink:href="#i-nodejs" x="-20.0" y="-20.0" width="40" height="40"/><text y="35.0" class="s" font-size="12" fill="#cfc6b8" text-anchor="middle">Node.js</text></g></g>

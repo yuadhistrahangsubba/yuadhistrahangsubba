@@ -24,7 +24,7 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/about-me-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="./assets/about-me.svg" />
-  <img src="./assets/about-me.svg" alt="Hi, I'm Yuadhistra. Most people just call me Y.D. I'm a backend developer from Bhutan. I like the quiet parts of software: schemas that age well, queues that don't drop messages, APIs nobody has to think twice about. Right now: building services for EMIS, learning Rust, getting CQRS and clean architecture right in practice. Off the keyboard: trekking, football on weekends, games. What I reach for: NestJS, TypeScript, Node.js, PostgreSQL, MySQL, Redis, Docker, NATS, GitHub Actions. Code with purpose, build with precision." width="100%"/>
+  <img src="./assets/about-me.svg" alt="Hi, I'm Yuadhistra. I'm a backend developer from Bhutan. I like the quiet parts of software: schemas that age well, queues that don't drop messages, APIs nobody has to think twice about. Right now: building services for EMIS, learning Rust, getting CQRS and clean architecture right in practice. Off the keyboard: trekking, football on weekends, games. What I reach for: NestJS, TypeScript, Node.js, PostgreSQL, MySQL, Redis, Docker, NATS, GitHub Actions. Code with purpose, build with precision." width="100%"/>
 </picture>
 </p>
 
@@ -90,28 +90,14 @@
 
 ---
 
-## 🌐 &nbsp;Connect
-
 <div align="center">
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/yuadhistra-hang-subba-0791633b3/)
-&nbsp;
-[![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/ram.subba.5015/)
-&nbsp;
-[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/y.d.luffy9/)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/footer-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/footer.svg" />
+  <img src="./assets/footer.svg" alt="Thanks for reading this far. Great systems are not just built; they are carefully designed, refined, and evolved. Signed, Yuadhistra, from Bhutan." width="100%" />
+</picture>
 
-</div>
-
-<br/>
-
----
-
-<div align="center">
-
-*"Great systems are not just built — they are carefully designed, refined, and evolved."*
-
-<br/>
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:FF00FF,100:00FFC0&height=130&section=footer&text=Thanks%20for%20visiting!&fontSize=22&fontColor=ffffff&animation=twinkling&fontAlignY=65" />
+**[LinkedIn](https://www.linkedin.com/in/yuadhistra-hang-subba-0791633b3/)** &nbsp;·&nbsp; **[Facebook](https://www.facebook.com/ram.subba.5015/)** &nbsp;·&nbsp; **[Instagram](https://www.instagram.com/y.d.luffy9/)**
 
 </div>
