@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="270" viewBox="0 0 920 270" role="img" aria-label="Thanks for reading this far. Great systems are not just built; they are carefully designed, refined, and evolved. Signed, Yuadhistra, from Bhutan.">
+<style>.s{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif} .k{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif}.f{transform-box:fill-box;transform-origin:top center;animation:f 3.2s ease-in-out infinite alternate}@keyframes f{from{transform:skewX(-4deg)}to{transform:skewX(5deg)}}@media (prefers-reduced-motion:reduce){.f{animation:none}}</style>
+<rect width="920" height="270" rx="10" fill="#fbf8f2"/>
+<path d="M56,56 L385,56 L415,38 L437,48 L473,22 L495,36 L517,26 L555,56 L864,56" fill="none" stroke="#1f1c18" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M461,30 L473,22 L485,30" fill="none" stroke="#1f1c18" stroke-width="1"/>
+<path d="M473,22 Q499,40 517,26" fill="none" stroke="#8a8174" stroke-width=".7"/>
+<rect class="f" x="478.9" y="27.1" width="5" height="7" fill="#3d6fb6" style="animation-delay:0.0s"/>
+<rect class="f" x="486.9" y="30.4" width="5" height="7" fill="#e8e2d4" style="animation-delay:0.2s"/>
+<rect class="f" x="494.5" y="32.0" width="5" height="7" fill="#c4452f" style="animation-delay:0.4s"/>
+<rect class="f" x="501.6" y="31.8" width="5" height="7" fill="#4d8a4f" style="animation-delay:0.6s"/>
+<rect class="f" x="508.3" y="29.8" width="5" height="7" fill="#d49a2a" style="animation-delay:0.8s"/>
+<circle cx="604" cy="30" r="9" fill="#d49a2a" fill-opacity=".85"/><circle cx="608" cy="27" r="8" fill="#fbf8f2"/>
+<text x="460.0" y="118" class="s" font-size="34" fill="#1f1c18" text-anchor="middle" letter-spacing="-0.3">Thanks for reading this far.</text>
+<text x="460.0" y="156" class="s" font-size="18" font-style="italic" fill="#4a443c" text-anchor="middle">“Great systems are not just built; they are carefully designed, refined, and evolved.”</text>
+<text x="460.0" y="200" class="s" font-size="22" font-style="italic" fill="#c0561b" text-anchor="middle">— Yuadhistra</text>
+<line x1="56" y1="226" x2="864" y2="226" stroke="#e4ddd0"/>
+<text x="56" y="250" class="k" font-size="11" letter-spacing="2.4" fill="#8a8174">SAY HELLO BELOW</text>
+<text x="864" y="250" class="s" font-size="13" font-style="italic" fill="#8a8174" text-anchor="end">written from Bhutan, the land of the thunder dragon</text>
+</svg>
