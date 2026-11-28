@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="600" viewBox="0 0 920 600" role="img" aria-label="GitHub in numbers: 4,379 contributions since 2021, 2,712 this year. Current streak 0 days, longest 45 days, active on 270 of the last 365 days, 791 pull requests.">
+<style>.s{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif} .k{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif}.g{transform-box:fill-box;transform-origin:bottom;animation:g 1.1s cubic-bezier(.2,.8,.2,1) both}.w{transform-box:fill-box;transform-origin:left;animation:w 1.2s cubic-bezier(.2,.8,.2,1) both}@keyframes g{from{transform:scaleY(0)}} @keyframes w{from{transform:scaleX(0)}}@media (prefers-reduced-motion:reduce){.g,.w{animation:none}}</style>
+<rect width="920" height="600" rx="10" fill="#15130f"/>
+<text x="56.0" y="62.0" class="k" font-size="11" fill="#8d8578" letter-spacing="2.4">GITHUB, IN NUMBERS</text>
+<text x="864.0" y="62.0" class="s" font-size="13" font-style="italic" text-anchor="end" fill="#8d8578">public + private · updated Nov 28, 2026</text>
+<line x1="56" y1="78" x2="864" y2="78" stroke="#2e2a23"/>
+<text x="56.0" y="132.0" class="s" font-size="34" fill="#efe9de" letter-spacing="-0.3">4,379 contributions since 2021,</text>
+<text x="56.0" y="170.0" class="s" font-size="26" font-style="italic" fill="#e98a45">2,712 of them this year.</text>
+<text x="56.0" y="248.0" class="s" font-size="40" fill="#efe9de">0<tspan font-size="17" fill="#8d8578" dx="6">days</tspan></text>
+<text x="56.0" y="274.0" class="s" font-size="15" fill="#cfc6b8">current streak</text>
+<text x="56.0" y="294.0" class="s" font-size="14" font-style="italic" fill="#8d8578">starts with the next commit</text>
+<text x="262.0" y="248.0" class="s" font-size="40" fill="#efe9de">45<tspan font-size="17" fill="#8d8578" dx="6">days</tspan></text>
+<text x="262.0" y="274.0" class="s" font-size="15" fill="#cfc6b8">longest streak</text>
+<text x="262.0" y="294.0" class="s" font-size="14" font-style="italic" fill="#8d8578">Oct 12 – Nov 25</text>
+<text x="468.0" y="248.0" class="s" font-size="40" fill="#efe9de">270<tspan font-size="17" fill="#8d8578" dx="6">/ 365</tspan></text>
+<text x="468.0" y="274.0" class="s" font-size="15" fill="#cfc6b8">days I showed up</text>
+<text x="468.0" y="294.0" class="s" font-size="14" font-style="italic" fill="#8d8578">over the last year</text>
+<text x="674.0" y="248.0" class="s" font-size="40" fill="#efe9de">791</text>
+<text x="674.0" y="274.0" class="s" font-size="15" fill="#cfc6b8">pull requests</text>
+<text x="674.0" y="294.0" class="s" font-size="14" font-style="italic" fill="#8d8578">across 19 repositories</text>
+<line x1="56" y1="326" x2="864" y2="326" stroke="#2e2a23"/>
+<text x="56.0" y="362.0" class="s" font-size="15" font-style="italic" fill="#e98a45">When I work</text>
+<rect class="g" style="animation-delay:0.10s" x="56" y="394.0" width="30" height="92.0" rx="2" fill="#e98a45"><title>Monday: 655</title></rect>
+<text x="71.0" y="506.0" class="s" font-size="13" text-anchor="middle" fill="#efe9de">Mon</text>
+<rect class="g" style="animation-delay:0.16s" x="108" y="406.9" width="30" height="79.1" rx="2" fill="#3a352d"><title>Tuesday: 563</title></rect>
+<text x="123.0" y="506.0" class="s" font-size="13" text-anchor="middle" fill="#8d8578">Tue</text>
+<rect class="g" style="animation-delay:0.22s" x="160" y="425.0" width="30" height="61.0" rx="2" fill="#3a352d"><title>Wednesday: 434</title></rect>
+<text x="175.0" y="506.0" class="s" font-size="13" text-anchor="middle" fill="#8d8578">Wed</text>
+<rect class="g" style="animation-delay:0.28s" x="212" y="419.7" width="30" height="66.3" rx="2" fill="#3a352d"><title>Thursday: 472</title></rect>
+<text x="227.0" y="506.0" class="s" font-size="13" text-anchor="middle" fill="#8d8578">Thu</text>
+<rect class="g" style="animation-delay:0.34s" x="264" y="423.1" width="30" height="62.9" rx="2" fill="#3a352d"><title>Friday: 448</title></rect>
+<text x="279.0" y="506.0" class="s" font-size="13" text-anchor="middle" fill="#8d8578">Fri</text>
+<rect class="g" style="animation-delay:0.40s" x="316" y="470.4" width="30" height="15.6" rx="2" fill="#3a352d"><title>Saturday: 111</title></rect>
+<text x="331.0" y="506.0" class="s" font-size="13" text-anchor="middle" fill="#8d8578">Sat</text>
+<rect class="g" style="animation-delay:0.46s" x="368" y="461.6" width="30" height="24.4" rx="2" fill="#3a352d"><title>Sunday: 174</title></rect>
+<text x="383.0" y="506.0" class="s" font-size="13" text-anchor="middle" fill="#8d8578">Sun</text>
+<text x="56.0" y="540.0" class="s" font-size="14" font-style="italic" fill="#8d8578">Busiest on Mondays. Weekends stay fairly quiet.</text>
+<text x="500.0" y="362.0" class="s" font-size="15" font-style="italic" fill="#e98a45">What I write</text>
+<rect class="w" style="animation-delay:0.20s" x="500.0" y="378" width="220.0" height="8" rx="1.5" fill="#e98a45" fill-opacity="1"><title>TypeScript</title></rect>
+<rect class="w" style="animation-delay:0.28s" x="722.0" y="378" width="53.2" height="8" rx="1.5" fill="#efe9de" fill-opacity="0.55"><title>Blade</title></rect>
+<rect class="w" style="animation-delay:0.36s" x="777.2" y="378" width="19.0" height="8" rx="1.5" fill="#efe9de" fill-opacity="0.4"><title>JavaScript</title></rect>
+<rect class="w" style="animation-delay:0.44s" x="798.2" y="378" width="14.6" height="8" rx="1.5" fill="#efe9de" fill-opacity="0.28"><title>CSS</title></rect>
+<rect class="w" style="animation-delay:0.52s" x="814.8" y="378" width="14.5" height="8" rx="1.5" fill="#efe9de" fill-opacity="0.18"><title>PHP</title></rect>
+<text x="500.0" y="414.0" class="s" font-size="14" fill="#cfc6b8">TypeScript <tspan fill="#8d8578" font-style="italic">61%</tspan></text>
+<text x="624.0" y="414.0" class="s" font-size="14" fill="#cfc6b8">Blade <tspan fill="#8d8578" font-style="italic">15%</tspan></text>
+<text x="748.0" y="414.0" class="s" font-size="14" fill="#cfc6b8">JavaScript <tspan fill="#8d8578" font-style="italic">6%</tspan></text>
+<text x="500.0" y="438.0" class="s" font-size="14" fill="#cfc6b8">CSS <tspan fill="#8d8578" font-style="italic">5%</tspan></text>
+<text x="624.0" y="438.0" class="s" font-size="14" fill="#cfc6b8">PHP <tspan fill="#8d8578" font-style="italic">5%</tspan></text>
+<text x="500.0" y="484.0" class="s" font-size="15" font-style="italic" fill="#e98a45">Year by year</text>
+<text x="500.0" y="512.0" class="s" font-size="15" fill="#cfc6b8">8</text>
+<text x="500.0" y="532.0" class="s" font-size="12" fill="#8d8578">2021</text>
+<text x="560.7" y="512.0" class="s" font-size="15" fill="#8d8578">–</text>
+<text x="560.7" y="532.0" class="s" font-size="12" fill="#8d8578">2022</text>
+<text x="621.3" y="512.0" class="s" font-size="15" fill="#8d8578">–</text>
+<text x="621.3" y="532.0" class="s" font-size="12" fill="#8d8578">2023</text>
+<text x="682.0" y="512.0" class="s" font-size="15" fill="#cfc6b8">233</text>
+<text x="682.0" y="532.0" class="s" font-size="12" fill="#8d8578">2024</text>
+<text x="742.7" y="512.0" class="s" font-size="15" fill="#cfc6b8">1,426</text>
+<text x="742.7" y="532.0" class="s" font-size="12" fill="#8d8578">2025</text>
+<text x="803.3" y="512.0" class="s" font-size="17" fill="#efe9de">2,712</text>
+<text x="803.3" y="532.0" class="s" font-size="12" font-style="italic" fill="#e98a45">2026 so far</text>
+<line x1="56" y1="560" x2="864" y2="560" stroke="#2e2a23"/>
+<text x="56.0" y="584.0" class="s" font-size="13" font-style="italic" fill="#8d8578">busiest single day: 117 contributions on Nov 16</text>
+<text x="864.0" y="584.0" class="s" font-size="13" font-style="italic" text-anchor="end" fill="#8d8578">19 repositories · 5 followers · no stars yet</text>
+</svg>
